@@ -1,4 +1,7 @@
 import React from 'react';
+
+import Login from '../src/views/onboarding-view/components/Login';
+
 import './App.css';
 
 function App() {
