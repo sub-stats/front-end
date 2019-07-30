@@ -9,7 +9,7 @@ const HeaderDiv = styled.div`
 
 */
 
-export const colors = {
+export const Colors = {
     primary: {
         orangered: "#FF4500",
         mint: "#0DD3BB",
