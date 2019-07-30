@@ -53,7 +53,7 @@ function SummaryContentContainer ({currentSub, setCurrentSub}) {
     return (
         
         <Box p={2} display="flex" justifyContent="flex-start" flexDirection="column">
-        <Typography variant="h4" alignItems="flex-start">Explore stats about a subreddit</Typography>
+        <Typography variant="h4" >Explore stats about a subreddit</Typography>
             <TopInfo 
                 fake={fake} 
                 currentSub={currentSub} 
