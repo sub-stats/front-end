@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 /*
 This page contains color variables for consistent styling. Colors are stored as strings in an object; access the colors using dot notation:
 
@@ -28,3 +29,11 @@ export const Colors = {
         redditgrey: "#DAE0E6"
     }
   };
+
+  export const InfoCard = styled.div`
+  background-image: linear-gradient(120deg, rgba(255, 176, 0, .4), rgba(255, 69, 0, .2) 90%);
+  padding: 1rem;
+  border-radius: .5rem;
+  box-shadow: 2px 3px 5px ${Colors.secondary.mango};
+  margin: 2rem;
+`;
