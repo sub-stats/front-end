@@ -7,6 +7,7 @@ const RedditForm = styled(Form)`
     display: flex;
     flex-direction: column;
     width: 250px;
+    align-items: center;
     margin: auto;
 `;
 
@@ -36,6 +37,16 @@ const Logo = styled.img`
     margin-top: 50px;
 `;
 
+const LoginButton = styled.button`
+    border: 1px solid rgb(0, 121, 211);
+    color: rgb(0, 121, 211);
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    width: 50%;
+`;
+
 const Login = ({errors, touched}) => {
     return (
         <>
@@ -45,7 +56,7 @@ const Login = ({errors, touched}) => {
                 {/* <p>{touched.username && errors.username}</p> */}
                 <RedditField type="email" placeholder="Email" name="email" autoComplete="off" />
                 {/* <p>{touched.email && errors.email}</p> */}
-                <button type="submit">Log In</button>
+                <LoginButton type="submit">LOG IN</LoginButton>
             </RedditForm>
         </>
     )
