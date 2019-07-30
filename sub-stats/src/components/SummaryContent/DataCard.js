@@ -13,12 +13,12 @@ const StyledTitle = styled.h1`
     color: ${Colors.primary.mint};
 `;
 
-function LargeDataCard (props) {
+function DataCard (props) {
     return (
         <StyledCard>
-            <StyledTitle>I AM A LARGE CARD</StyledTitle>
+            <StyledTitle>I AM A DATA CARD</StyledTitle>
         </StyledCard>
     )
 }
 
-export default LargeDataCard;
+export default DataCard;
