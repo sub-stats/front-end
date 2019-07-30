@@ -5,16 +5,20 @@ import styled from 'styled-components';
 
 import NavTabs from './components/NavTabs';
 import SummaryContentContainer from './components/SummaryContent/SummaryContentContainer';
+import { MuiThemeProvider } from '@material-ui/core';
+import theme from './theme';
 
 
 function App() {
   const [currentSub, setCurrentSub] = useState({name: "Select a subreddit", description: "Subreddit description goes here!"})
 
   return (
-    <div className="App">
-      <NavTabs></NavTabs>
-      <SummaryContentContainer currentSub={currentSub} setCurrentSub={setCurrentSub}/>
-    </div>
+    <MuiThemeProvider theme={theme}>
+      <div className="App">
+        <NavTabs></NavTabs>
+        <SummaryContentContainer currentSub={currentSub} setCurrentSub={setCurrentSub}/>
+      </div>
+    </MuiThemeProvider>
   );
 }
 
