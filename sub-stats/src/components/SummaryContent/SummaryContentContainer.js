@@ -3,27 +3,57 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 
-import LargeDataCard from './LargeDataCard';
-import TopInfo from './TopInfoCard/TopInfo';
+import DataCard from './DataCard';
+import TopInfo from './TopInfo/TopInfo';
+import MiddleInfo from './MiddleInfo/MiddleInfo'
 
 const StyledContainer = styled(Container)`
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  align-items: flex-start;
   
 `;
 
-const fake = ["explainlikeimfive", "askhistorians", "relationships"];
+const fake = [{
+    name: 'AskReddit',
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+}, {
+    name: "askscience",
+    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+}, {
+    name: "AskHistorians",
+    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "AskComputerScience",
+    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "AskCulinary",
+    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "TrueAskReddit",
+    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "AskSocialScience",
+    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "AskEngineers",
+    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "askphilosophy",
+    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}
+];
 
 function MainContentContainer ({currentSub, setCurrentSub}) {
     return (
         <StyledContainer>
             <TopInfo fake={fake} currentSub={currentSub} setCurrentSub={setCurrentSub}/>
-            {fake.map(displayData => {
+            {/*fake.map(displayData => {
                 return (
-                    <LargeDataCard key={displayData} src="placeholder" />
+                    <DataCard key={displayData.name} src="placeholder" />
                 )
-            })}
+            })*/}
+            <MiddleInfo />
 
         </StyledContainer>
     )
