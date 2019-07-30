@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 
-import Container from '@material-ui/core/Container';
+import { Box, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 
 import DataCard from './DataCard';
 import TopInfo from './TopInfo/TopInfo';
 import MiddleInfo from './MiddleInfo/MiddleInfo'
 
-const StyledContainer = styled(Container)`
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
+// const StyledContainer = styled(Container)`
+//   display: flex;
+//   flex-flow: column nowrap;
+//   align-items: flex-start;
   
-`;
+// `;
 
 const fake = [{
     name: 'AskReddit',
@@ -44,14 +44,16 @@ const fake = [{
 }
 ];
 
-function MainContentContainer ({currentSub, setCurrentSub}) {
+function SummaryContentContainer ({currentSub, setCurrentSub}) {
     const today = new Date();
     const yesterday = new Date(new Date().setDate(today.getDate() - 1));
     const [startDate, setStartDate] = useState(yesterday.toLocaleDateString('en-CA'));
     const [endDate, setEndDate] = useState(today.toLocaleDateString('en-CA'));
 
     return (
-        <StyledContainer>
+        
+        <Box p={2} display="flex" justifyContent="flex-start" flexDirection="column">
+        <Typography variant="h4" alignItems="flex-start">Explore stats about a subreddit</Typography>
             <TopInfo 
                 fake={fake} 
                 currentSub={currentSub} 
@@ -67,9 +69,8 @@ function MainContentContainer ({currentSub, setCurrentSub}) {
                 )
             })*/}
             <MiddleInfo />
-
-        </StyledContainer>
+        </Box>
     )
 }
 
-export default MainContentContainer;
+export default SummaryContentContainer
