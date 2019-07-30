@@ -28,8 +28,8 @@ export default function NavTabs() {
           onChange={handleChange}
           aria-label="navigation tabs"
         >
-          <LinkTab label="Summary" to="/summary"></LinkTab>
-          <LinkTab label="Compare" to="/compare"></LinkTab>
+          <LinkTab label="Summary" to="/dashboard"></LinkTab>
+          <LinkTab label="Compare" to="/dashboard/compare"></LinkTab>
           <LinkTab onClick={() => {
             console.log("Logged out now, please come again!");
             localStorage.removeItem('token');
