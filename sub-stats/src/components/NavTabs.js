@@ -30,6 +30,10 @@ export default function NavTabs() {
         >
           <LinkTab label="Summary" to="/summary"></LinkTab>
           <LinkTab label="Compare" to="/compare"></LinkTab>
+          <LinkTab onClick={() => {
+            console.log("Logged out now, please come again!");
+            localStorage.removeItem('token');
+          }} label="Log Out" to="/"></LinkTab>
         </Tabs>
       </AppBar>
     </div>

@@ -21,7 +21,7 @@ function App() {
     <MuiThemeProvider theme={theme}>
       <div className="App">
         <LoggedIn exact path="/" setLoggedIn={setLoggedIn} component={Login} />
-        
+
         <PrivateRoute exact path="/dashboard" component={NavTabs} />
         <PrivateRoute exact path="/dashboard" currentSub={currentSub} setCurrentSub={setCurrentSub} component={SummaryContentContainer} />
       </div>
