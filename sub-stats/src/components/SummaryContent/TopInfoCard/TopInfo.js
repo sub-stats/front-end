@@ -4,6 +4,7 @@ import { Colors } from '../../Style-Colors';
 import styled from 'styled-components';
 
 import SelectSubreddit from './SelectSubreddit';
+import DatePicker from './DatePicker';
 
 const StyledCard = styled.div`
     background-color: ${Colors.primary.white};
@@ -26,12 +27,14 @@ const StyledTitle = styled.h1`
 `;
 
 
-function TopInfo ({fake, currentSub, setCurrentSub}) {
+function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, endDate, setEndDate}) {
 
     return (
         <StyledCard bgColor={Colors.secondary.yellow}>
             <StyledTitle>r/</StyledTitle>
             <SelectSubreddit fake={fake} currentSub={currentSub} setCurrentSub={setCurrentSub} />
+            <DatePicker label="Start Date" date={startDate} setDate={setStartDate}></DatePicker>
+            <DatePicker label="End Date" date={endDate} setDate={setEndDate}></DatePicker>
         </StyledCard>
     )
 }
