@@ -8,15 +8,12 @@ import SummaryContentContainer from './components/SummaryContent/SummaryContentC
 
 
 function App() {
-  const [currentSub, setCurrentSub] = useState({name: "Select a subreddit"})
+  const [currentSub, setCurrentSub] = useState({name: "Select a subreddit", description: "Subreddit description goes here!"})
 
   return (
     <div className="App">
-    {/* Sidebar can go here */}
-      <div>
-        <NavTabs></NavTabs>
-        <SummaryContentContainer currentSub={currentSub} setCurrentSub={setCurrentSub}/>
-      </div>
+      <NavTabs></NavTabs>
+      <SummaryContentContainer currentSub={currentSub} setCurrentSub={setCurrentSub}/>
     </div>
   );
 }
