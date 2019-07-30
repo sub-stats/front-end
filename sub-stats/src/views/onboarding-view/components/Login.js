@@ -3,6 +3,21 @@ import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
 
+const Login = ({errors, touched}) => {
+    return (
+        <>
+            <Logo src="./imgs/reddit-logo.png" alt="#" />
+            <RedditForm>
+                <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
+                {/* <p>{touched.username && errors.username}</p> */}
+                <RedditField type="email" placeholder="Email" name="email" autoComplete="off" />
+                {/* <p>{touched.email && errors.email}</p> */}
+                <LoginButton type="submit">LOG IN</LoginButton>
+            </RedditForm>
+        </>
+    )
+}
+
 const RedditForm = styled(Form)`
     display: flex;
     flex-direction: column;
@@ -47,20 +62,6 @@ const LoginButton = styled.button`
     width: 50%;
 `;
 
-const Login = ({errors, touched}) => {
-    return (
-        <>
-            <Logo src="./imgs/reddit-logo.png" alt="#" />
-            <RedditForm>
-                <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
-                {/* <p>{touched.username && errors.username}</p> */}
-                <RedditField type="email" placeholder="Email" name="email" autoComplete="off" />
-                {/* <p>{touched.email && errors.email}</p> */}
-                <LoginButton type="submit">LOG IN</LoginButton>
-            </RedditForm>
-        </>
-    )
-}
 
 export default withFormik({
     mapPropsToValues() {
