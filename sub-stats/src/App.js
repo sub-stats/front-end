@@ -13,6 +13,7 @@ import theme from './theme';
 import Header from './components/Header';
 
 import './App.css';
+import CompareContentContainer from './components/CompareContent/CompareContentContainer';
 
 function App() {
   const [currentSub, setCurrentSub] = useState({name: "Select a subreddit", description: "Subreddit description goes here!"})
@@ -22,8 +23,9 @@ function App() {
     <MuiThemeProvider theme={theme}>
       <div className="App">
         <LoggedIn exact path="/" setLoggedIn={setLoggedIn} component={Login} />
-        <PrivateRoute exact path="/dashboard" component={Header} />
-        <PrivateRoute exact path="/dashboard" component={NavTabs} />
+        <PrivateRoute path="/dashboard" component={Header} />
+        <PrivateRoute path="/dashboard" component={NavTabs} /> 
+        <PrivateRoute path="/dashboard/compare" component={CompareContentContainer} />
         <PrivateRoute exact path="/dashboard" currentSub={currentSub} setCurrentSub={setCurrentSub} component={SummaryContentContainer} />
       </div>
     </MuiThemeProvider>
