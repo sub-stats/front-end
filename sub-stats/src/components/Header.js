@@ -5,7 +5,7 @@ export default function Header() {
 
   return (
     <div>
-      <AppBar color="inherit" position="static">
+      <AppBar color="inherit" position="static" id="headerImg">
         <Box p={2} display="flex" justifyContent="flex-start">
           <Typography variant="h6">
               Better Subreddit Stats

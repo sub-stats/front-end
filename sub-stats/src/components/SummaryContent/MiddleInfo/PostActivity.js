@@ -12,14 +12,6 @@ const StyledIframe = styled.iframe`
   border-radius: 1rem;
 `;
 function PostActivity (props) {
-    useEffect(() => {
-        axios.get(`https://yuka-livingston-subreddit.herokuapp.com/posts?start=${props.startDate}&end=${props.endDate}&subreddit=${props.currentSub.name}`)
-            .then(response => {
-                console.log("Response data: ", response);
-            })
-            .catch(error => console.log(error.message))
-    }, [props.currentSub, props.startDate, props.endDate]);
-
     // console.log("This is my current sub: ", props.currentSub.name);
     // console.log("This is my start date: ", props.startDate);
     // console.log("This is my end date: ", props.endDate);
