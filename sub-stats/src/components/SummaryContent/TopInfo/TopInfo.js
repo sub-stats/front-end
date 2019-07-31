@@ -13,7 +13,7 @@ const StyledCard = styled.div`
     margin: 1rem;
     display: flex;
     align-items: baseline;
-    justify-content: center;
+    justify-content: flex-end;
     padding: 1rem;
 `;
 
@@ -26,18 +26,12 @@ const StyledDivRow = styled.div`
 const StyledDivColumn = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 `;
 
-const StyledTitle = styled.h1`
-    color: ${Colors.secondary.mango};
-    margin-right: -1rem;
-`;
 
 
 function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, endDate, setEndDate}) {
 
-    console.log(currentSub.description)
     return (
         <>
         <StyledCard>
@@ -66,8 +60,9 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
             
             <StyledDivColumn>
                 <Box textAlign="left">
-                <Typography variant="h5" color="secondary">About this subreddit</Typography>
-                <Typography textAlign="left">{currentSub.description}</Typography></Box>
+                    <Typography variant="h5" color="secondary">About this subreddit</Typography>
+                    <Typography textAlign="left">{currentSub.description}</Typography>
+                </Box>
             </StyledDivColumn>
             
             <br />

@@ -13,9 +13,13 @@ function SelectSubreddit ({fake, currentSub, setCurrentSub}) {
 
     const handleChange = (event) => {
         console.log(currentSub);
+        let desc = fake.find((b) => {return b.name === event.target.value})
+        console.log("find desc", desc)
         setCurrentSub(oldValues => ({
             ...oldValues,
             [event.target.name]: event.target.value,
+            description: desc.description,
+            
         }));
     }
 
@@ -28,7 +32,6 @@ function SelectSubreddit ({fake, currentSub, setCurrentSub}) {
                     onChange={handleChange}
                     autoWidth={true}>
                     {fake.map( a => {
-                        console.log(a.name)
                         return (
                         <MenuItem key={a.name} value={a.name}>{a.name}</MenuItem>
                     )})}
