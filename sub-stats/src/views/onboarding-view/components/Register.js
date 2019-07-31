@@ -1,5 +1,5 @@
 import React from 'react';
-import { RedditForm, RedditField, Logo, LoginButton } from './Login';
+import { RedditForm, RedditField, Logo, LoginButton, FormContainer, HeaderText } from './Login';
 import { withFormik } from 'formik';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -8,15 +8,16 @@ const Register = ({isRegistering}) => {
     return (
         <>  
             {isRegistering ? <h1>Loading...</h1> :
-                <div>
-                    <Logo src="./imgs/reddit-logo.png" alt="#" />
+                <FormContainer>
+                    {/* <Logo src="./imgs/reddit-logo.png" alt="#" /> */}
+                    <HeaderText>Better Sub Stats</HeaderText>
                     <RedditForm>
                         <RedditField type="text" name="username" placeholder="Username" autoComplete="off" />
                         <RedditField type="password" name="password" placeholder="Password" autoComplete="off" />
-                        <LoginButton type="submit">Submit</LoginButton>
+                        <LoginButton type="submit">REGISTER</LoginButton>
                     </RedditForm>
                     <p>Already have an account? <Link to="/login">Login</Link></p>
-                </div>
+                </FormContainer>
             }
         </>
     )

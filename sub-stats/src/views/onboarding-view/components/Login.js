@@ -8,8 +8,9 @@ const Login = ({isRegistering, errors, touched}) => {
     return (
         <>
             {isRegistering ? <h1>Loading...</h1> :
-            <div>
-                <Logo src="./imgs/reddit-logo.png" alt="#" />
+            <FormContainer>
+                {/* <Logo src="./imgs/reddit-logo.png" alt="#" /> */}
+                <HeaderText>Better Sub Stats</HeaderText>
                 <RedditForm>
                     <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
                     {/* <p>{touched.username && errors.username}</p> */}
@@ -18,11 +19,22 @@ const Login = ({isRegistering, errors, touched}) => {
                     <LoginButton type="submit">LOG IN</LoginButton>
                     <p>Don't have an account yet? <Link to="/register">Register</Link></p>
                 </RedditForm>
-            </div>
+            </FormContainer>
             }
         </>
     )
 }
+
+export const FormContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 325px;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 50px;
+`;
 
 export const RedditForm = styled(Form)`
     display: flex;
@@ -53,9 +65,14 @@ export const RedditField = styled(Field)`
 `;
 
 export const Logo = styled.img`
-    height: 60px;
     margin-bottom: 10px;
-    margin-top: 50px;
+    height: 50px;
+    width: 50%;
+    align-self: center;
+`;
+
+export const HeaderText = styled.h1`
+    font-weight: 200;
 `;
 
 export const LoginButton = styled.button`
