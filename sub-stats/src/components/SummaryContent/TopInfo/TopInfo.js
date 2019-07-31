@@ -50,15 +50,13 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
                     age: Number(Math.round(parseFloat(res.data.ageOfSubInDays)+'e1')+'e-1'),
                     score: Number(Math.round(parseFloat(res.data.trendingScore)+'e2')+'e-2')
                 })
-                
             })
             .catch(error => console.log("ERROR HERE: ", error))
                 }
-
                 getTrending()
             }, [ currentSub ])
 
-    useEffect(() => {
+    useEffect(() => { // This currently doesn't work, will troubleshoot it in the morning.
         const getTrending = () => {
             fake.map(a => {
 
@@ -105,7 +103,7 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
             <StyledDivColumn>
                 <StyledBox textAlign="left">
                     <Typography variant="h5" color="secondary">About this subreddit</Typography>
-                    <Typography >{currentSub.description}</Typography>
+                    {currentSub.description ? <Typography >{currentSub.description}</Typography> : <Typography>Select a subreddit to read details about it.</Typography>}
                 </StyledBox>
             </StyledDivColumn>
           
