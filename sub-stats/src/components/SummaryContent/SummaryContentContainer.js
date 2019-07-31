@@ -58,12 +58,8 @@ function SummaryContentContainer ({isLoading, currentSub, setCurrentSub}) {
                     endDate={endDate}
                     setEndDate={setEndDate}
                     />
-                {/*fake.map(displayData => {
-                    return (
-                        <DataCard key={displayData.name} src="placeholder" />
-                    )
-                })*/}
                 <MiddleInfo currentSub={currentSub} startDate={startDate} endDate={endDate} />
+                <BottomInfo currentSub={currentSub} startDate={startDate} endDate={endDate} />
             </Box>
         }
         </>

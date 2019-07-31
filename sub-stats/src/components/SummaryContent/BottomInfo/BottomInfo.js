@@ -6,10 +6,15 @@ import { PrimaryCard, SecondaryCard, randomColor } from '../../Style-Colors'
 
 const StyledTopic = styled(SecondaryCard)`
     background-color: ${randomColor};
-    width: auto;
+    max-width: 30%;
+    display: flex;
+    margin: .5 rem;
 `;
 const BottomCard = styled.div`
     width: 60%;
+    text-align: center;
+    display: flex;
+    flex-direction: row-wrap;
 `;
 const StyledDivRow = styled.div`
     display: flex;
@@ -20,6 +25,7 @@ const StyledDivRow = styled.div`
 const StyledDivColumn = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
 `;
 
 function BottomInfo ({fake, currentSub, startDate, endDate}) {
@@ -31,8 +37,10 @@ function BottomInfo ({fake, currentSub, startDate, endDate}) {
             <Typography variant="h5" color="secondary">What do people post about{currentSub.name !== `Select a subreddit` ? ` in ${currentSub.name}?` : `?`}</Typography>
             {currentSub.name === `Select a subreddit` ?
              <div> <br/> <Typography> Select a subreddit to see.</Typography> <br/> </div>  :
-
+             <div>
+            <br />
              <StyledDivRow>
+             
              <BottomCard>
                 <PrimaryCard>
                     <Typography variant="h6">Top {currentSub.name} post between {startDate} and {endDate}</Typography>
@@ -41,18 +49,19 @@ function BottomInfo ({fake, currentSub, startDate, endDate}) {
                     </div>
                 </PrimaryCard>
             </BottomCard>
-             <BottomCard>
-                    <Typography variant="h6" color="primary">Other topics of conversation:</Typography>
-                    <div>
-                        <StyledTopic>Topic 1</StyledTopic>
+             <StyledDivColumn>
+             <Typography variant="h6" color="primary">Other topics of conversation:</Typography>
+             <br />
+                    <div id="hmm">
+                        <StyledTopic><Typography> Topic 1</Typography></StyledTopic>
                         <StyledTopic>Topic 222222</StyledTopic>
                         <StyledTopic>another topic</StyledTopic>
                         <StyledTopic>Am I another topic?</StyledTopic>
                         <StyledTopic>potatoes</StyledTopic>
                     </div>
                
-            </BottomCard>
-            </StyledDivRow>
+            </StyledDivColumn>
+            </StyledDivRow></div>
         }
             
         </div>
