@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
 import useLocalStorage from './hooks/useLocalStorage';
+import { register } from './views/onboarding-view/actions';
 
 import LoggedIn from './components/LoggedIn';
 import PrivateRoute from './components/PrivateRoute';
@@ -15,22 +17,33 @@ import Header from './components/Header';
 import './App.css';
 import CompareContentContainer from './components/CompareContent/CompareContentContainer';
 
-function App() {
-  const [currentSub, setCurrentSub] = useState({name: "Select a subreddit", description: ""})
+const App = (props) => {
+  const [currentSub, setCurrentSub] = useState({name: "Select a subreddit", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."})
   const [loggedIn, setLoggedIn] = useLocalStorage('token');
 
+  const register = (credentials) => {
+    props.register(credentials);
+  }
+  
   return (
     <MuiThemeProvider theme={theme}>
       <div className="App">
-        <LoggedIn exact path="/login" setLoggedIn={setLoggedIn} component={Login} loggedIn={loggedIn} />
-        <LoggedIn exact path="/register" component={Register} />
+        <LoggedIn exact path="/login" isLoading={props.isLoading} setLoggedIn={setLoggedIn} loggedIn={loggedIn} component={Login} />
+        <LoggedIn exact path="/register" register={register} component={Register} />
         <PrivateRoute path="/dashboard" component={Header} />
         <PrivateRoute path="/dashboard" component={NavTabs} /> 
         <PrivateRoute path="/dashboard/compare" component={CompareContentContainer} />
-        <PrivateRoute exact path="/dashboard" currentSub={currentSub} setCurrentSub={setCurrentSub} component={SummaryContentContainer} />
+        <PrivateRoute exact path="/dashboard" isLoading={props.isLoading} currentSub={currentSub} setCurrentSub={setCurrentSub} component={SummaryContentContainer} />
       </div>
     </MuiThemeProvider>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isLoading: state.isLoading,
+    error: state.error
+  }
+}
+
+export default connect(mapStateToProps, { register })(App);

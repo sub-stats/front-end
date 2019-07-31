@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Login = ({errors, touched}) => {
     return (
@@ -10,9 +11,10 @@ const Login = ({errors, touched}) => {
             <RedditForm>
                 <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
                 {/* <p>{touched.username && errors.username}</p> */}
-                <RedditField type="email" placeholder="Email" name="email" autoComplete="off" />
+                <RedditField type="password" placeholder="Password" name="password" autoComplete="off" />
                 {/* <p>{touched.email && errors.email}</p> */}
                 <LoginButton type="submit">LOG IN</LoginButton>
+                <p>Don't have an account yet? <Link to="/register">Register</Link></p>
             </RedditForm>
         </>
     )
@@ -59,7 +61,9 @@ export const LoginButton = styled.button`
     font-size: 14px;
     font-weight: 600;
     padding: 8px 16px;
-    width: 50%;
+    width: 200px;
+    outline: none;
+    cursor: pointer;
 `;
 
 
@@ -67,12 +71,12 @@ export default withFormik({
     mapPropsToValues() {
         return {
             username: '',
-            email: ''
+            password: ''
         }
     },
     validationSchema: Yup.object().shape({
         username: Yup.string().required().min(6),
-        email: Yup.string().required()
+        password: Yup.string().required().min(6)
     }),
     handleSubmit(credentials, formikBag) {
         formikBag.resetForm();
