@@ -4,16 +4,20 @@ import { withFormik } from 'formik';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 
-const Register = (props) => {
+const Register = ({isRegistering}) => {
     return (
-        <>
-            <Logo src="./imgs/reddit-logo.png" alt="#" />
-            <RedditForm>
-                <RedditField type="text" name="username" placeholder="Username" autoComplete="off" />
-                <RedditField type="password" name="password" placeholder="Password" autoComplete="off" />
-                <LoginButton type="submit">Submit</LoginButton>
-            </RedditForm>
-            <p>Already have an account? <Link to="/login">Login</Link></p>
+        <>  
+            {isRegistering ? <h1>Loading...</h1> :
+                <div>
+                    <Logo src="./imgs/reddit-logo.png" alt="#" />
+                    <RedditForm>
+                        <RedditField type="text" name="username" placeholder="Username" autoComplete="off" />
+                        <RedditField type="password" name="password" placeholder="Password" autoComplete="off" />
+                        <LoginButton type="submit">Submit</LoginButton>
+                    </RedditForm>
+                    <p>Already have an account? <Link to="/login">Login</Link></p>
+                </div>
+            }
         </>
     )
 }
@@ -32,6 +36,5 @@ export default withFormik({
     handleSubmit(credentials, formikBag) {
         formikBag.resetForm();
         formikBag.props.register(credentials);
-        formikBag.props.history.push('/dashboard');
     }
 })(Register);

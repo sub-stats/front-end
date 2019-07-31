@@ -4,18 +4,22 @@ import * as Yup from 'yup';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Login = ({errors, touched}) => {
+const Login = ({isRegistering, errors, touched}) => {
     return (
         <>
-            <Logo src="./imgs/reddit-logo.png" alt="#" />
-            <RedditForm>
-                <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
-                {/* <p>{touched.username && errors.username}</p> */}
-                <RedditField type="password" placeholder="Password" name="password" autoComplete="off" />
-                {/* <p>{touched.email && errors.email}</p> */}
-                <LoginButton type="submit">LOG IN</LoginButton>
-                <p>Don't have an account yet? <Link to="/register">Register</Link></p>
-            </RedditForm>
+            {isRegistering ? <h1>Loading...</h1> :
+            <div>
+                <Logo src="./imgs/reddit-logo.png" alt="#" />
+                <RedditForm>
+                    <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
+                    {/* <p>{touched.username && errors.username}</p> */}
+                    <RedditField type="password" placeholder="Password" name="password" autoComplete="off" />
+                    {/* <p>{touched.email && errors.email}</p> */}
+                    <LoginButton type="submit">LOG IN</LoginButton>
+                    <p>Don't have an account yet? <Link to="/register">Register</Link></p>
+                </RedditForm>
+            </div>
+            }
         </>
     )
 }
@@ -80,7 +84,6 @@ export default withFormik({
     }),
     handleSubmit(credentials, formikBag) {
         formikBag.resetForm();
-        formikBag.props.setLoggedIn(credentials.username);
-        formikBag.props.history.push('/dashboard');
+        formikBag.props.login(credentials);
     }
 })(Login);

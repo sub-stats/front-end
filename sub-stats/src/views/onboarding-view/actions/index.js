@@ -11,6 +11,18 @@ export const register = (credentials) => (dispatch) => {
             console.log(response);
             dispatch({ type: REGISTERING_SUCCESS });
         })
+        .then(() => {
+            dispatch({ type: LOGIN_START });
+            axios.post("https://yuka-livingston-subreddit.herokuapp.com/login", credentials)
+                .then(response => {
+                    console.log(response);
+                    dispatch({ type: LOGIN_SUCCESS, payload: response.data.token });
+                })
+                .catch(error => {
+                    console.log(error.message);
+                    dispatch({ type: LOGIN_FAILURE, payload: error.message });
+                })
+        })
         .catch(error => {
             console.log(error.message);
             dispatch({ type: REGISTERING_FAILURE });
@@ -26,7 +38,7 @@ export const login = (credentials) => (dispatch) => {
     axios.post("https://yuka-livingston-subreddit.herokuapp.com/login", credentials)
         .then(response => {
             console.log(response);
-            dispatch({ type: LOGIN_SUCCESS, payload: response });
+            dispatch({ type: LOGIN_SUCCESS, payload: response.data.token });
         })
         .catch(error => {
             console.log(error.message);

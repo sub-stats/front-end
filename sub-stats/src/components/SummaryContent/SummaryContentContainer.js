@@ -38,7 +38,7 @@ const fake = [{
 }
 ];
 
-function SummaryContentContainer ({isLoading, currentSub, setCurrentSub}) {
+function SummaryContentContainer ({isLoggingIn, currentSub, setCurrentSub}) {
     const today = new Date();
     const yesterday = new Date(new Date().setDate(today.getDate() - 1));
     const [startDate, setStartDate] = useState(yesterday.toLocaleDateString('en-CA'));
@@ -46,7 +46,7 @@ function SummaryContentContainer ({isLoading, currentSub, setCurrentSub}) {
 
     return (
         <>
-        {isLoading ? <h1>Loading...</h1> :
+        {isLoggingIn ? <h1>Loading...</h1> :
             <Box p={2} display="flex" justifyContent="flex-start" flexDirection="column">
             <Typography variant="h4" >Explore stats about a subreddit</Typography>
                 <TopInfo 
