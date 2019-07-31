@@ -14,7 +14,6 @@ function SelectSubreddit ({fake, currentSub, setCurrentSub}) {
     const handleChange = (event) => {
         console.log(currentSub);
         let desc = fake.find((b) => {return b.name === event.target.value})
-        console.log("find desc", desc)
         setCurrentSub(oldValues => ({
             ...oldValues,
             [event.target.name]: event.target.value,
