@@ -4,21 +4,37 @@ import * as Yup from 'yup';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Login = ({errors, touched}) => {
+const Login = ({isRegistering, errors, touched}) => {
     return (
         <>
-            <Logo src="./imgs/reddit-logo.png" alt="#" />
-            <RedditForm>
-                <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
-                {/* <p>{touched.username && errors.username}</p> */}
-                <RedditField type="password" placeholder="Password" name="password" autoComplete="off" />
-                {/* <p>{touched.email && errors.email}</p> */}
-                <LoginButton type="submit">LOG IN</LoginButton>
-                <p>Don't have an account yet? <Link to="/register">Register</Link></p>
-            </RedditForm>
+            {isRegistering ? <h1>Loading...</h1> :
+            <FormContainer>
+                {/* <Logo src="./imgs/reddit-logo.png" alt="#" /> */}
+                <HeaderText>Better Sub Stats</HeaderText>
+                <RedditForm>
+                    <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
+                    {/* <p>{touched.username && errors.username}</p> */}
+                    <RedditField type="password" placeholder="Password" name="password" autoComplete="off" />
+                    {/* <p>{touched.email && errors.email}</p> */}
+                    <LoginButton type="submit">LOG IN</LoginButton>
+                    <p>Don't have an account yet? <Link to="/register">Register</Link></p>
+                </RedditForm>
+            </FormContainer>
+            }
         </>
     )
 }
+
+export const FormContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 325px;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 50px;
+`;
 
 export const RedditForm = styled(Form)`
     display: flex;
@@ -49,9 +65,14 @@ export const RedditField = styled(Field)`
 `;
 
 export const Logo = styled.img`
-    height: 60px;
     margin-bottom: 10px;
-    margin-top: 50px;
+    height: 50px;
+    width: 50%;
+    align-self: center;
+`;
+
+export const HeaderText = styled.h1`
+    font-weight: 200;
 `;
 
 export const LoginButton = styled.button`
@@ -80,7 +101,6 @@ export default withFormik({
     }),
     handleSubmit(credentials, formikBag) {
         formikBag.resetForm();
-        formikBag.props.setLoggedIn(credentials.username);
-        formikBag.props.history.push('/dashboard');
+        formikBag.props.login(credentials);
     }
 })(Login);
