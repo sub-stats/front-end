@@ -32,7 +32,7 @@ const App = (props) => {
   return (
     <MuiThemeProvider theme={theme}>
       <div className="App">
-        <LoggedIn exact path="/login" login={login} setLoggedIn={setLoggedIn} loggedIn={loggedIn} component={Login} />
+        <LoggedIn exact path="/login" isLoggingIn={props.isLoggingIn} login={login} setLoggedIn={setLoggedIn} loggedIn={loggedIn} component={Login} />
         <LoggedIn exact path="/register" isRegistering={props.isRegistering} register={register} component={Register} />
         <PrivateRoute path="/dashboard" component={Header} />
         <PrivateRoute path="/dashboard" component={NavTabs} /> 
