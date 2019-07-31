@@ -14,7 +14,7 @@ export const Colors = {
     primary: {
         orangered: "rgba(255, 69, 0, 1)",
         mint: "rgba(13, 211, 187, 1)",
-        blue: "#rgba(36, 160, 237, 1)",
+        blue: "rgba(36, 160, 237, 1)",
     },
     secondary: {
         yellow: "rgba(255, 202, 0, 1)",
@@ -31,18 +31,19 @@ export const Colors = {
   };
 
   export const PrimaryCard = styled.div`
-  background-image: linear-gradient(120deg, rgba(255, 176, 0, .4), rgba(255, 69, 0, .2) 90%);
+  background-image: linear-gradient(120deg, rgba(255, 135, 23, .4) 30%, rgba(255, 176, 0, .4) 20%);
   padding: 1rem;
-  border-radius: .5rem;
-  box-shadow: 2px 3px 5px ${Colors.secondary.mango};
+  border-radius: .3rem;
+  border: 0px solid ${Colors.secondary.mango};
+  box-shadow: 2px 3px 3px lightgrey;
   margin: 1rem 2rem;
 `;
 
   export const SecondaryCard = styled.div`
-  background-image: linear-gradient(120deg, rgba(13, 211, 187, .4), rgba(36, 160, 237, .5) 90%);
+  background-image: linear-gradient(120deg, rgba(36, 160, 237, .3) 30%, rgba(13, 211, 187, .4) 20%);
   padding: 1rem;
-  border-radius: .5rem;
-  box-shadow: 2px 3px 5px ${Colors.primary.mint};
+  border-radius: .3rem;
+  box-shadow: 2px 3px 3px lightgrey;
   margin: 1rem 2rem;
 `;
 
