@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Card, Button, Divider, Typography, Box } from '@material-ui/core';
+import React from 'react';
+import { Divider, Typography, Box } from '@material-ui/core';
 import { Colors, InfoCard } from '../../Style-Colors';
 import styled from 'styled-components';
 
@@ -29,15 +29,10 @@ const StyledDivColumn = styled.div`
     align-items: flex-start;
 `;
 
-const StyledTitle = styled.h1`
-    color: ${Colors.secondary.mango};
-    margin-right: -1rem;
-`;
-
-
 function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, endDate, setEndDate}) {
 
-    console.log(currentSub.description)
+    // console.log(currentSub.description)
+    // console.log(currentSub);
     return (
         <>
         <StyledCard>
@@ -67,7 +62,7 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
             <StyledDivColumn>
                 <Box textAlign="left">
                 <Typography variant="h5" color="secondary">About this subreddit</Typography>
-                <Typography textAlign="left">{currentSub.description}</Typography></Box>
+                <Typography textalign="left">{currentSub.description}</Typography></Box>
             </StyledDivColumn>
             
             <br />

@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-
 import { Box, Typography } from '@material-ui/core';
-import styled from 'styled-components';
 
-import DataCard from './DataCard';
 import TopInfo from './TopInfo/TopInfo';
 import MiddleInfo from './MiddleInfo/MiddleInfo'
 
@@ -14,34 +11,43 @@ import MiddleInfo from './MiddleInfo/MiddleInfo'
   
 // `;
 
-const fake = [{
-    name: 'AskReddit',
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-}, {
-    name: "askscience",
-    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-}, {
-    name: "AskHistorians",
-    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
-}, {
-    name: "AskComputerScience",
-    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
-}, {
-    name: "AskCulinary",
-    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
-}, {
-    name: "TrueAskReddit",
-    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
-}, {
-    name: "AskSocialScience",
-    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
-}, {
-    name: "AskEngineers",
-    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
-}, {
-    name: "askphilosophy",
-    description: "Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
-}
+const fake = [
+    {
+        name: 'AskReddit',
+        description: "Ask reddit some stuff, cool."
+    }, 
+    {
+        name: "askscience",
+        description: "Science is da bomb."
+    }, 
+    {
+        name: "AskHistorians",
+        description: "History is old and cool."
+    }, 
+    {
+        name: "AskComputerScience",
+        description: "Comp Sci, boooooi."
+    }, 
+    {
+        name: "AskCulinary",
+        description: "It's RAAAAW. Food is so great."
+    }, 
+    {
+        name: "TrueAskReddit",
+        description: "Ask reddit again, but for realsies."
+    }, 
+    {
+        name: "AskSocialScience",
+        description: "Social Science; It's like science, but more social."
+    }, 
+    {
+        name: "AskEngineers",
+        description: "Trust me, I'm an engineer."
+    }, 
+    {
+        name: "askphilosophy",
+        description: "What is the question to ask?"
+    }
 ];
 
 function SummaryContentContainer ({currentSub, setCurrentSub}) {
@@ -51,7 +57,6 @@ function SummaryContentContainer ({currentSub, setCurrentSub}) {
     const [endDate, setEndDate] = useState(today.toLocaleDateString('en-CA'));
 
     return (
-        
         <Box p={2} display="flex" justifyContent="flex-start" flexDirection="column">
         <Typography variant="h4" >Explore stats about a subreddit</Typography>
             <TopInfo 
@@ -68,7 +73,7 @@ function SummaryContentContainer ({currentSub, setCurrentSub}) {
                     <DataCard key={displayData.name} src="placeholder" />
                 )
             })*/}
-            <MiddleInfo />
+            <MiddleInfo currentSub={currentSub} startDate={startDate} endDate={endDate} />
         </Box>
     )
 }

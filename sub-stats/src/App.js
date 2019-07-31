@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 
 import useLocalStorage from './hooks/useLocalStorage';
 
 import LoggedIn from './components/LoggedIn';
 import PrivateRoute from './components/PrivateRoute';
 import Login from './views/onboarding-view/components/Login';
+import Register from './views/onboarding-view/components/Register';
 import NavTabs from './components/NavTabs';
 import SummaryContentContainer from './components/SummaryContent/SummaryContentContainer';
 import { MuiThemeProvider } from '@material-ui/core';
@@ -22,7 +22,8 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <div className="App">
-        <LoggedIn exact path="/" setLoggedIn={setLoggedIn} component={Login} />
+        <LoggedIn exact path="/login" setLoggedIn={setLoggedIn} component={Login} loggedIn={loggedIn} />
+        <LoggedIn exact path="/register" component={Register} />
         <PrivateRoute path="/dashboard" component={Header} />
         <PrivateRoute path="/dashboard" component={NavTabs} /> 
         <PrivateRoute path="/dashboard/compare" component={CompareContentContainer} />

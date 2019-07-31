@@ -1,6 +1,5 @@
 import React from 'react';
 import { Select, MenuItem, FormHelperText, FormControl } from '@material-ui/core';
-import { Colors } from '../../Style-Colors';
 import styled from 'styled-components';
 
 const StyledForm = styled.form`
@@ -12,7 +11,6 @@ const StyledForm = styled.form`
 function SelectSubreddit ({fake, currentSub, setCurrentSub}) {
 
     const handleChange = (event) => {
-        console.log(currentSub);
         setCurrentSub(oldValues => ({
             ...oldValues,
             [event.target.name]: event.target.value,
@@ -28,7 +26,6 @@ function SelectSubreddit ({fake, currentSub, setCurrentSub}) {
                     onChange={handleChange}
                     autoWidth={true}>
                     {fake.map( a => {
-                        console.log(a.name)
                         return (
                         <MenuItem key={a.name} value={a.name}>{a.name}</MenuItem>
                     )})}

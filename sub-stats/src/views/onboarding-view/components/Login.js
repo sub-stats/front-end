@@ -3,14 +3,30 @@ import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
 
-const RedditForm = styled(Form)`
+const Login = ({errors, touched}) => {
+    return (
+        <>
+            <Logo src="./imgs/reddit-logo.png" alt="#" />
+            <RedditForm>
+                <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
+                {/* <p>{touched.username && errors.username}</p> */}
+                <RedditField type="email" placeholder="Email" name="email" autoComplete="off" />
+                {/* <p>{touched.email && errors.email}</p> */}
+                <LoginButton type="submit">LOG IN</LoginButton>
+            </RedditForm>
+        </>
+    )
+}
+
+export const RedditForm = styled(Form)`
     display: flex;
     flex-direction: column;
     width: 250px;
+    align-items: center;
     margin: auto;
 `;
 
-const RedditField = styled(Field)`
+export const RedditField = styled(Field)`
     font-size: 14px;
     border-radius: 5px;
     outline: none;
@@ -30,26 +46,22 @@ const RedditField = styled(Field)`
     }
 `;
 
-const Logo = styled.img`
+export const Logo = styled.img`
     height: 60px;
     margin-bottom: 10px;
     margin-top: 50px;
 `;
 
-const Login = ({errors, touched}) => {
-    return (
-        <>
-            <Logo src="./imgs/reddit-logo.png" alt="#" />
-            <RedditForm>
-                <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
-                {/* <p>{touched.username && errors.username}</p> */}
-                <RedditField type="email" placeholder="Email" name="email" autoComplete="off" />
-                {/* <p>{touched.email && errors.email}</p> */}
-                <button type="submit">Log In</button>
-            </RedditForm>
-        </>
-    )
-}
+export const LoginButton = styled.button`
+    border: 1px solid rgb(0, 121, 211);
+    color: rgb(0, 121, 211);
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    width: 50%;
+`;
+
 
 export default withFormik({
     mapPropsToValues() {

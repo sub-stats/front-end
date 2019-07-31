@@ -1,6 +1,5 @@
 import React from 'react';
-import { AppBar, Box, Typography, Button } from '@material-ui/core';
-import styled from 'styled-components';
+import { AppBar, Box, Typography } from '@material-ui/core';
 
 export default function Header() {
 
