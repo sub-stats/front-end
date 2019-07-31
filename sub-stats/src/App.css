@@ -10,5 +10,15 @@
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: whitesmoke; 
 }
+
+#graph-body {
+  background-color: rgba(255, 255, 255, .5);
+}
+
+#hmm {
+display: flex;
+flex-flow: row wrap;
+}
+
