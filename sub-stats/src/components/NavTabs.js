@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledAppBar = styled(AppBar)`
-background-image: linear-gradient(120deg, #0DD3BB, #24A0ED 90%);
+background-image: linear-gradient(120deg, #24A0ED, #24A0ED 90%);
 `;
 
 function LinkTab(props) {
