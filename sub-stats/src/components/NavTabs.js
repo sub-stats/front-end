@@ -33,7 +33,7 @@ export default function NavTabs() {
           <LinkTab onClick={() => {
             console.log("Logged out now, please come again!");
             localStorage.removeItem('token');
-          }} label="Log Out" to="/"></LinkTab>
+          }} label="Log Out" to="/login"></LinkTab>
         </Tabs>
       </AppBar>
     </div>

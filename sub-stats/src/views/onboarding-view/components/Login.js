@@ -18,7 +18,7 @@ const Login = ({errors, touched}) => {
     )
 }
 
-const RedditForm = styled(Form)`
+export const RedditForm = styled(Form)`
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -26,7 +26,7 @@ const RedditForm = styled(Form)`
     margin: auto;
 `;
 
-const RedditField = styled(Field)`
+export const RedditField = styled(Field)`
     font-size: 14px;
     border-radius: 5px;
     outline: none;
@@ -46,13 +46,13 @@ const RedditField = styled(Field)`
     }
 `;
 
-const Logo = styled.img`
+export const Logo = styled.img`
     height: 60px;
     margin-bottom: 10px;
     margin-top: 50px;
 `;
 
-const LoginButton = styled.button`
+export const LoginButton = styled.button`
     border: 1px solid rgb(0, 121, 211);
     color: rgb(0, 121, 211);
     border-radius: 5px;
