@@ -3,51 +3,39 @@ import { Box, Typography } from '@material-ui/core';
 
 import TopInfo from './TopInfo/TopInfo';
 import MiddleInfo from './MiddleInfo/MiddleInfo'
+import BottomInfo from './BottomInfo/BottomInfo'
 
-// const StyledContainer = styled(Container)`
-//   display: flex;
-//   flex-flow: column nowrap;
-//   align-items: flex-start;
-  
-// `;
-
-const fake = [
-    {
-        name: 'AskReddit',
-        description: "Ask reddit some stuff, cool."
-    }, 
-    {
-        name: "askscience",
-        description: "Science is da bomb."
-    }, 
-    {
-        name: "AskHistorians",
-        description: "History is old and cool."
-    }, 
-    {
-        name: "AskComputerScience",
-        description: "Comp Sci, boooooi."
-    }, 
-    {
-        name: "AskCulinary",
-        description: "It's RAAAAW. Food is so great."
-    }, 
-    {
-        name: "TrueAskReddit",
-        description: "Ask reddit again, but for realsies."
-    }, 
-    {
-        name: "AskSocialScience",
-        description: "Social Science; It's like science, but more social."
-    }, 
-    {
-        name: "AskEngineers",
-        description: "Trust me, I'm an engineer."
-    }, 
-    {
-        name: "askphilosophy",
-        description: "What is the question to ask?"
-    }
+const fake = [{
+    name: 'AskReddit',
+    description: "AskReddit description here!!!!"
+}, {
+    name: "askscience",
+    description: "askscience description here!!!!!!!"
+}, {
+    name: "AskHistorians",
+    description: "AskHistorians Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "AskComputerScience",
+    description: "AskComputerScience Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "AskCulinary",
+    description: "AskCulinary Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "TrueAskReddit",
+    description: "TrueAskReddit Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "AskSocialScience",
+    description: "AskSocialScience Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "AskEngineers",
+    description: "AskEngineers Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "askphilosophy",
+    description: "askphilosophy Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "explainlikeimfive",
+    description: "explainlikeimfive Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}
 ];
 
 function SummaryContentContainer ({isLoading, currentSub, setCurrentSub}) {
