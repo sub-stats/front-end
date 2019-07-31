@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-
 import { Box, Typography } from '@material-ui/core';
-import styled from 'styled-components';
 
-import DataCard from './DataCard';
 import TopInfo from './TopInfo/TopInfo';
 import MiddleInfo from './MiddleInfo/MiddleInfo'
 import BottomInfo from './BottomInfo/BottomInfo'
@@ -48,7 +45,6 @@ function SummaryContentContainer ({currentSub, setCurrentSub}) {
     const [endDate, setEndDate] = useState(today.toLocaleDateString('en-CA'));
 
     return (
-        
         <Box p={2} display="flex" justifyContent="flex-start" flexDirection="column">
         <Typography variant="h4" >Explore stats about a subreddit</Typography>
             <TopInfo 
@@ -60,19 +56,17 @@ function SummaryContentContainer ({currentSub, setCurrentSub}) {
                 endDate={endDate}
                 setEndDate={setEndDate}
                 />
-            {/*fake.map(displayData => {
-                return (
-                    <DataCard key={displayData.name} src="placeholder" />
-                )
-            })*/}
-            <MiddleInfo />
+            <MiddleInfo
+                fake={fake} 
+                currentSub={currentSub}
+                startDate={startDate}
+                endDate={endDate}/>
             <BottomInfo 
                 fake={fake} 
                 currentSub={currentSub}
                 startDate={startDate}
                 endDate={endDate}
                 />
-            
         </Box>
     )
 }

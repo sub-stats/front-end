@@ -42,7 +42,7 @@ export default function NavTabs(props) {
           <LinkTab onClick={() => {
             console.log("Logged out now, please come again!");
             localStorage.removeItem('token');
-          }} label="Log Out" to="/"></LinkTab>
+          }} label="Log Out" to="/login"></LinkTab>
         </Tabs>
       </StyledAppBar>
     </div>

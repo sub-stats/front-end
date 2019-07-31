@@ -1,6 +1,5 @@
 import React from 'react';
 import { Select, MenuItem, FormHelperText, FormControl } from '@material-ui/core';
-import { Colors } from '../../Style-Colors';
 import styled from 'styled-components';
 
 const StyledForm = styled.form`

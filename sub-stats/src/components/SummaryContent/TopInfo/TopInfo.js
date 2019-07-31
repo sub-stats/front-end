@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Button, Divider, Typography, Box } from '@material-ui/core';
+import { Divider, Typography, Box } from '@material-ui/core';
 import { Colors, PrimaryCard, SecondaryCard } from '../../Style-Colors';
 import styled from 'styled-components';
 import axios from 'axios';
@@ -54,7 +54,7 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
             .catch(error => console.log("ERROR HERE: ", error))
                 }
                 getTrending()
-            }, [ currentSub ])
+            }, [ currentSub.name ])
 
     useEffect(() => { // This currently doesn't work, will troubleshoot it in the morning.
         const getTrending = () => {
@@ -71,7 +71,7 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
                 }
 
                 getTrending()
-            }, [])
+            }, [ currentSub.name ])
     
 
     return (
