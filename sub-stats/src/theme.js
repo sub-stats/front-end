@@ -14,7 +14,12 @@ const theme = createMuiTheme({
     error: {
       main: `${Colors.secondary.yellow}`
     }
-  }
+  },
+  typography: {
+    fontFamily: [
+      'verdana', 'arial', 'helvetica', 'sans-serif'
+    ].join(','),
+  },
 });
 
 export default theme;
