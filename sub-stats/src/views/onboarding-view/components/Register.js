@@ -11,8 +11,8 @@ const Register = (props) => {
             <RedditForm>
                 <RedditField type="text" name="username" placeholder="Username" autoComplete="off" />
                 <RedditField type="password" name="password" placeholder="Password" autoComplete="off" />
+                <LoginButton type="submit">Submit</LoginButton>
             </RedditForm>
-            <LoginButton type="submit">REGISTER</LoginButton>
             <p>Already have an account? <Link to="/login">Login</Link></p>
         </>
     )
@@ -31,8 +31,7 @@ export default withFormik({
     }),
     handleSubmit(credentials, formikBag) {
         formikBag.resetForm();
-        console.log(credentials);
         formikBag.props.register(credentials);
-        formikBag.props.history.push('/login');
+        formikBag.props.history.push('/dashboard');
     }
 })(Register);

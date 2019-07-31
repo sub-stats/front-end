@@ -22,19 +22,18 @@ const App = (props) => {
   const [loggedIn, setLoggedIn] = useLocalStorage('token');
 
   const register = (credentials) => {
-    console.log(credentials);
     props.register(credentials);
   }
   
   return (
     <MuiThemeProvider theme={theme}>
       <div className="App">
-        <LoggedIn exact path="/login" setLoggedIn={setLoggedIn} component={Login} loggedIn={loggedIn} />
+        <LoggedIn exact path="/login" isLoading={props.isLoading} setLoggedIn={setLoggedIn} loggedIn={loggedIn} component={Login} />
         <LoggedIn exact path="/register" register={register} component={Register} />
         <PrivateRoute path="/dashboard" component={Header} />
         <PrivateRoute path="/dashboard" component={NavTabs} /> 
         <PrivateRoute path="/dashboard/compare" component={CompareContentContainer} />
-        <PrivateRoute exact path="/dashboard" currentSub={currentSub} setCurrentSub={setCurrentSub} component={SummaryContentContainer} />
+        <PrivateRoute exact path="/dashboard" isLoading={props.isLoading} currentSub={currentSub} setCurrentSub={setCurrentSub} component={SummaryContentContainer} />
       </div>
     </MuiThemeProvider>
   );
@@ -42,7 +41,7 @@ const App = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isRegistering: state.isRegistering,
+    isLoading: state.isLoading,
     error: state.error
   }
 }
