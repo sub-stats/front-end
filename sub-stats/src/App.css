@@ -3,7 +3,7 @@
   background-image: url("./assets/images/headerImg.svg");
   background-size: 50rem;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 65%;
   background-position-y: -12rem;
   background-attachment: fixed;
   height: 10rem;
@@ -22,3 +22,12 @@ display: flex;
 flex-flow: row wrap;
 }
 
+#iframe svg {
+  box-shadow: 2px 2px 3px grey;
+}
+
+
+#wrapper {
+  margin: 0 auto;
+  max-width: 1000px;
+}

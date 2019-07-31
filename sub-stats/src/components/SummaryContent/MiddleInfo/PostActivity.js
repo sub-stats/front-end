@@ -6,10 +6,14 @@ import { Colors, PrimaryCard } from '../../Style-Colors'
 import styled from 'styled-components'
 
 const StyledIframe = styled.iframe`
-  height: 39rem;
+  height: 29.5rem;
   width: 100%;
   border: none;
   border-radius: 1rem;
+`;
+
+const StyledPrimaryCard = styled(PrimaryCard)`
+    margin: 1rem 0;
 `;
 function PostActivity (props) {
     // console.log("This is my current sub: ", props.currentSub.name);
@@ -18,9 +22,9 @@ function PostActivity (props) {
 
     return (
         
-        <PrimaryCard>
-            <StyledIframe src="https://sub-stats-dash.herokuapp.com/"></StyledIframe>
-        </PrimaryCard>
+        <StyledPrimaryCard>
+            <StyledIframe id="iframe" src="https://sub-stats-dash.herokuapp.com/"></StyledIframe>
+        </StyledPrimaryCard>
     )
 }
 

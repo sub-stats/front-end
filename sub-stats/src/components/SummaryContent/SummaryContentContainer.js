@@ -7,13 +7,13 @@ import BottomInfo from './BottomInfo/BottomInfo'
 
 const fake = [{
     name: 'AskReddit',
-    description: "AskReddit description here!!!!"
+    description: `r/AskReddit is a subreddit for general questions. Questions can be silly, random, mundane, and serious, ranging from "How do you feel about ORANGE JUICE" to "What is the closest you've ever come to dying?" Answers are given from anyone who wishes to answer.`
 }, {
     name: "askscience",
-    description: "askscience description here!!!!!!!"
+    description: `r/askscience is a subreddit for questions about science. Questions can be focused on a number of scientific fields, such as chemistry, planetary science, neuroscience, etc. It also allows questions from the social sciences. Answers are expected to be reliably sourced and/or answered by an expert.`
 }, {
     name: "AskHistorians",
-    description: "AskHistorians Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+    description: "r/AskHistorians is a subreddit "
 }, {
     name: "AskComputerScience",
     description: "AskComputerScience Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
