@@ -8,7 +8,8 @@ import {
 } from '../actions';
 
 const initialState = {
-    isLoading: false,
+    isRegistering: false,
+    isLoggingIn: false,
     error: ''
 }
 
@@ -17,13 +18,28 @@ export const reducer = (state = initialState, action) => {
         case REGISTERING_START:
             return {
                 ...state,
-                isLoading: true,
+                isRegistering: true,
                 error: ''
             }
         case REGISTERING_SUCCESS:
             return {
                 ...state,
-                isLoading: false,
+                isRegistering: false,
+                isLogginIn: true,
+                error: ''
+            }
+        case LOGIN_START:
+            return {
+                ...state,
+                isLoggingIn: true,
+                error: ''
+            }
+        case LOGIN_SUCCESS:
+            localStorage.setItem('token', action.payload);
+            
+            return {
+                ...state,
+                isLoggingIn: false,
                 error: ''
             }
         default:

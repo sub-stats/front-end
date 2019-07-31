@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import useLocalStorage from './hooks/useLocalStorage';
-import { register } from './views/onboarding-view/actions';
+import { register, login } from './views/onboarding-view/actions';
 
 import LoggedIn from './components/LoggedIn';
 import PrivateRoute from './components/PrivateRoute';
@@ -24,11 +24,14 @@ const App = (props) => {
   const register = (credentials) => {
     props.register(credentials);
   }
+
+  const login = (credentials) => {
+    props.login(credentials);
+  }
   
   return (
     <MuiThemeProvider theme={theme}>
-      <div className="App">
-        
+      <div className="App">       
           <LoggedIn exact path="/login" isLoading={props.isLoading} setLoggedIn={setLoggedIn} loggedIn={loggedIn} component={Login} />
           <LoggedIn exact path="/register" register={register} component={Register} />
           <PrivateRoute path="/dashboard" component={Header} />
@@ -44,9 +47,10 @@ const App = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
+    isRegistering: state.isRegistering,
+    isLoggingIn: state.isLoggingIn,
     error: state.error
   }
 }
 
-export default connect(mapStateToProps, { register })(App);
+export default connect(mapStateToProps, { register, login })(App);
