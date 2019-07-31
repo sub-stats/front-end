@@ -16,7 +16,7 @@ import './App.css';
 import CompareContentContainer from './components/CompareContent/CompareContentContainer';
 
 function App() {
-  const [currentSub, setCurrentSub] = useState({name: "Select a subreddit", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."})
+  const [currentSub, setCurrentSub] = useState({name: "Select a subreddit", description: ""})
   const [loggedIn, setLoggedIn] = useLocalStorage('token');
 
   return (

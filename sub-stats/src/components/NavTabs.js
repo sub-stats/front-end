@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Tab, Tabs } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyledAppBar = styled(AppBar)`
+background-image: linear-gradient(120deg, #0DD3BB, #24A0ED 90%);
+`;
 
 function LinkTab(props) {
   return (
@@ -25,7 +30,7 @@ export default function NavTabs(props) {
 
   return (
     <div>
-      <AppBar position="static">
+      <StyledAppBar position="static">
         <Tabs
           centered
           value={tab}
@@ -39,7 +44,7 @@ export default function NavTabs(props) {
             localStorage.removeItem('token');
           }} label="Log Out" to="/login"></LinkTab>
         </Tabs>
-      </AppBar>
+      </StyledAppBar>
     </div>
   )
 }

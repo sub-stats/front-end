@@ -2,6 +2,15 @@ import React, { useEffect } from 'react';
 import { Card } from '@material-ui/core';
 import axios from 'axios';
 
+import { Colors, PrimaryCard } from '../../Style-Colors'
+import styled from 'styled-components'
+
+const StyledIframe = styled.iframe`
+  height: 39rem;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+`;
 function PostActivity (props) {
     useEffect(() => {
         axios.get(`https://yuka-livingston-subreddit.herokuapp.com/posts?start=${props.startDate}&end=${props.endDate}&subreddit=${props.currentSub.name}`)
@@ -16,10 +25,10 @@ function PostActivity (props) {
     // console.log("This is my end date: ", props.endDate);
 
     return (
-        <Card>
-            {/* <StyledTitle>I AM A POST ACTIVITY GRAPH SHOWING 24 HOURS OF AVERAGE POSTING AND COMMENTING ACTIVITY</StyledTitle> */}
-            
-        </Card>
+        
+        <PrimaryCard>
+            <StyledIframe src="https://sub-stats-dash.herokuapp.com/"></StyledIframe>
+        </PrimaryCard>
     )
 }
 
