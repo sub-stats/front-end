@@ -1,7 +1,6 @@
 const initialState = {
-    isFetching: false,
-    error: '',
-    data: null
+    isRegistering: false,
+    error: ''
 }
 
 export const reducer = (state = initialState, action) => {

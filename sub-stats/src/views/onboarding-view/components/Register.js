@@ -1,12 +1,38 @@
 import React from 'react';
 import { RedditForm, RedditField, Logo, LoginButton } from './Login';
+import { withFormik } from 'formik';
+import { Link } from 'react-router-dom';
+import * as Yup from 'yup';
 
-const Register = () => {
+const Register = (props) => {
     return (
-        <RedditForm>
-            <RedditField type="text" name="username" placeholder="Username" autoComplete="off" />
-        </RedditForm>
+        <>
+            <Logo src="./imgs/reddit-logo.png" alt="#" />
+            <RedditForm>
+                <RedditField type="text" name="username" placeholder="Username" autoComplete="off" />
+                <RedditField type="password" name="password" placeholder="Password" autoComplete="off" />
+            </RedditForm>
+            <LoginButton type="submit">REGISTER</LoginButton>
+            <p>Already have an account? <Link to="/login">Login</Link></p>
+        </>
     )
 }
 
-export default Register;
+export default withFormik({
+    mapPropsToValues() {
+        return {
+            username: '',
+            password: ''
+        }
+    },
+    validationSchema: Yup.object().shape({
+        username: Yup.string().required().min(6),
+        password: Yup.string().required().min(6)
+    }),
+    handleSubmit(credentials, formikBag) {
+        formikBag.resetForm();
+        console.log(credentials);
+        formikBag.props.register(credentials);
+        formikBag.props.history.push('/login');
+    }
+})(Register);
