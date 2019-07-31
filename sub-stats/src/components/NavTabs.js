@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Tab, Tabs } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
@@ -12,8 +12,12 @@ function LinkTab(props) {
   )
 }
 
-export default function NavTabs() {
-  const [tab, setTab] = useState(0); 
+export default function NavTabs(props) {
+  const [tab, setTab] = useState("/dashboard"); 
+
+  useEffect(() => {
+    setTab(props.location.pathname);
+  }, [props.location.pathname]);
 
   const handleChange = (event, value) => {
       setTab(value);
@@ -28,8 +32,8 @@ export default function NavTabs() {
           onChange={handleChange}
           aria-label="navigation tabs"
         >
-          <LinkTab label="Summary" to="/dashboard"></LinkTab>
-          <LinkTab label="Compare" to="/dashboard/compare"></LinkTab>
+          <LinkTab value="/dashboard" label="Summary" to="/dashboard"></LinkTab>
+          <LinkTab value="/dashboard/compare" label="Compare" to="/dashboard/compare"></LinkTab>
           <LinkTab onClick={() => {
             console.log("Logged out now, please come again!");
             localStorage.removeItem('token');
