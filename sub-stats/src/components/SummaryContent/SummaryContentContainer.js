@@ -6,13 +6,7 @@ import styled from 'styled-components';
 import DataCard from './DataCard';
 import TopInfo from './TopInfo/TopInfo';
 import MiddleInfo from './MiddleInfo/MiddleInfo'
-
-// const StyledContainer = styled(Container)`
-//   display: flex;
-//   flex-flow: column nowrap;
-//   align-items: flex-start;
-  
-// `;
+import BottomInfo from './BottomInfo/BottomInfo'
 
 const fake = [{
     name: 'AskReddit',
@@ -41,6 +35,9 @@ const fake = [{
 }, {
     name: "askphilosophy",
     description: "askphilosophy Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+}, {
+    name: "explainlikeimfive",
+    description: "explainlikeimfive Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
 }
 ];
 
@@ -69,6 +66,13 @@ function SummaryContentContainer ({currentSub, setCurrentSub}) {
                 )
             })*/}
             <MiddleInfo />
+            <BottomInfo 
+                fake={fake} 
+                currentSub={currentSub}
+                startDate={startDate}
+                endDate={endDate}
+                />
+            
         </Box>
     )
 }
