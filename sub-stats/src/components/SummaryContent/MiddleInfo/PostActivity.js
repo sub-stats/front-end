@@ -15,7 +15,7 @@ const StyledIframe = styled.iframe`
 const StyledPrimaryCard = styled(PrimaryCard)`
     margin: 1rem 0;
 `;
-function PostActivity (props) {
+function PostActivity ({currentSub, startDate, endDate}) {
     // console.log("This is my current sub: ", props.currentSub.name);
     // console.log("This is my start date: ", props.startDate);
     // console.log("This is my end date: ", props.endDate);
@@ -23,7 +23,7 @@ function PostActivity (props) {
     return (
         
         <StyledPrimaryCard>
-            <StyledIframe id="iframe" src="https://sub-stats-dash.herokuapp.com/"></StyledIframe>
+            <StyledIframe id="iframe" src="https://sub-stats-dash.herokuapp.com/submissions-per-day?subreddit=askcomputerscience&start=05-20-19&end=07-10-19"></StyledIframe>
         </StyledPrimaryCard>
     )
 }
