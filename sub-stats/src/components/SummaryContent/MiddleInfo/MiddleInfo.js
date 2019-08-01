@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@material-ui/core'
+import { Typography, Box } from '@material-ui/core'
 
 import PostActivity from './PostActivity';
 import CommentActivity from './CommentActivity';
@@ -26,36 +26,46 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
             <br></br>
             <br></br>
             <Typography variant="h6" color="primary">Post activity per day</Typography>
-                <PostActivity
-                    currentSub={lowercaseCurrentSub}
-                    startDate={reformattedStartDate}
-                    endDate={reformattedEndDate}
-                    graphAPIURL={URL} />
-                <CommentActivity
-                    currentSub={lowercaseCurrentSub}
-                    startDate={reformattedStartDate}
-                    endDate={reformattedEndDate}
-                    graphAPIURL={URL} />
-                <CommentPerPost
-                    currentSub={lowercaseCurrentSub}
-                    startDate={reformattedStartDate}
-                    endDate={reformattedEndDate}
-                    graphAPIURL={URL} />
+            <Box display="flex" justifyContent="space-between" flexWrap="wrap">
+                <Box width="45%">
+                    <PostActivity
+                        currentSub={lowercaseCurrentSub}
+                        startDate={reformattedStartDate}
+                        endDate={reformattedEndDate}
+                        graphAPIURL={URL} />
+                </Box>
+                <Box width="45%">
+                    <CommentActivity
+                        currentSub={lowercaseCurrentSub}
+                        startDate={reformattedStartDate}
+                        endDate={reformattedEndDate}
+                        graphAPIURL={URL} />
+                </Box>
+                <Box width="45%">
+                    <CommentPerPost
+                        currentSub={lowercaseCurrentSub}
+                        startDate={reformattedStartDate}
+                        endDate={reformattedEndDate}
+                        graphAPIURL={URL} />
+                </Box>
+                <Box width="45%">
                 <UniqueUsers
                     currentSub={lowercaseCurrentSub}
                     startDate={reformattedStartDate}
                     endDate={reformattedEndDate}
                     graphAPIURL={URL} />
-                <DayOfWeek
-                    currentSub={lowercaseCurrentSub}
-                    startDate={reformattedStartDate}
-                    endDate={reformattedEndDate}
-                    graphAPIURL={URL} />
-                <HourOfDay
-                    currentSub={lowercaseCurrentSub}
-                    startDate={reformattedStartDate}
-                    endDate={reformattedEndDate}
-                    graphAPIURL={URL} />
+                </Box>
+            </Box>
+            <DayOfWeek
+                currentSub={lowercaseCurrentSub}
+                startDate={reformattedStartDate}
+                endDate={reformattedEndDate}
+                graphAPIURL={URL} />
+            <HourOfDay
+                currentSub={lowercaseCurrentSub}
+                startDate={reformattedStartDate}
+                endDate={reformattedEndDate}
+                graphAPIURL={URL} />
         </div>
         
     )

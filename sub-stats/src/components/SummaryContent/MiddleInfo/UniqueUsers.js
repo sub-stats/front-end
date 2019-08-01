@@ -12,6 +12,7 @@ const StyledIframe = styled.iframe`
 
 const StyledPrimaryCard = styled(PrimaryCard)`
     margin: 1rem 0;
+    height: 28rem;
 `;
 function UniqueUsers ({currentSub, startDate, endDate}) {
 
