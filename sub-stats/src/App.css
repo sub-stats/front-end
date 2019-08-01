@@ -65,3 +65,13 @@ justify-content: center;
 #title-text {
   font-family: "Baloo Chettan";
 }
+
+.day-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.day-item {
+  width: 45%;
+}

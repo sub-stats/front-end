@@ -57,7 +57,7 @@ export const BgDiv = styled.div`
   background-color: rgba(255,255,255, .1);
   border-radius: .3rem;
   box-shadow: 0 0 10px rgba(255,255,255, .2);
-  margin: 1rem;
+  margin: .5rem;
 `;
 
 export const randomColor = () => {

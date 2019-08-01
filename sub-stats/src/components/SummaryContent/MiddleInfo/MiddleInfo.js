@@ -46,6 +46,7 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
                     startDate={reformattedStartDate}
                     endDate={reformattedEndDate}
                     graphAPIURL={URL} />
+                <div className="day-wrapper">
                 <DayOfWeek
                     currentSub={lowercaseCurrentSub}
                     startDate={reformattedStartDate}
@@ -56,6 +57,7 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
                     startDate={reformattedStartDate}
                     endDate={reformattedEndDate}
                     graphAPIURL={URL} />
+                </div>    
         </div>
         
     )
