@@ -25,7 +25,7 @@ export const theme = createMuiTheme({
 export const darkTheme = createMuiTheme({
   palette: {
     primary: {
-      main: `${Colors.neutral.redditgrey}`,
+      main: `${Colors.primary.blue}`,
       contrastText: `${Colors.neutral.white}`
     },
     secondary: {
