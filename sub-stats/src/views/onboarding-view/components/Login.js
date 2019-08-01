@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 
-const Login = ({isLoggingIn, errors, touched}) => {
+const Login = ({error, isLoggingIn, errors, touched}) => {
     return (
         <>
             {isLoggingIn ? 
@@ -13,11 +13,12 @@ const Login = ({isLoggingIn, errors, touched}) => {
                 <FormContainer>
                     {/* <Logo src="./imgs/reddit-logo.png" alt="#" /> */}
                     <HeaderText>Better Sub Stats</HeaderText>
+                    {error && <ErrorMessage>{error}</ErrorMessage>}
                     <RedditForm>
                         <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
-                        {/* <p>{touched.username && errors.username}</p> */}
+                        {errors.username && <ErrorMessage>{touched.username && errors.username}</ErrorMessage>}
                         <RedditField type="password" placeholder="Password" name="password" autoComplete="off" />
-                        {/* <p>{touched.email && errors.email}</p> */}
+                        {errors.password && <ErrorMessage>{touched.password && errors.password}</ErrorMessage>}
                         <LoginButton type="submit">LOG IN</LoginButton>
                         <p>Don't have an account yet? <Link to="/register">Register</Link></p>
                     </RedditForm>
@@ -26,6 +27,12 @@ const Login = ({isLoggingIn, errors, touched}) => {
         </>
     )
 }
+
+export const ErrorMessage = styled.p`
+    margin-top: 0;
+    font-size: 0.8rem;
+    color: red;
+`;
 
 export const CenterDiv = styled.div`
     display: flex;
@@ -95,7 +102,6 @@ export const LoginButton = styled.button`
     cursor: pointer;
 `;
 
-
 export default withFormik({
     mapPropsToValues() {
         return {
@@ -104,8 +110,8 @@ export default withFormik({
         }
     },
     validationSchema: Yup.object().shape({
-        username: Yup.string().required().min(6),
-        password: Yup.string().required().min(6)
+        username: Yup.string().required('Username is required.').min(6, 'Username must be at least 6 characters.'),
+        password: Yup.string().required('Password is required').min(6, 'Password must be at least 6 characters.')
     }),
     handleSubmit(credentials, formikBag) {
         formikBag.resetForm();

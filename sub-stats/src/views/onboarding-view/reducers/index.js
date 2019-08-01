@@ -28,6 +28,12 @@ export const reducer = (state = initialState, action) => {
                 isLogginIn: true,
                 error: ''
             }
+        case REGISTERING_FAILURE: 
+            return {
+                ...state,
+                isRegistering: false,
+                error: action.payload
+            }
         case LOGIN_START:
             return {
                 ...state,
@@ -41,6 +47,12 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 isLoggingIn: false,
                 error: ''
+            }
+        case LOGIN_FAILURE:
+            return {
+                ...state,
+                isLoggingIn: false,
+                error: "Username or password is incorrect."
             }
         default:
             return state;
