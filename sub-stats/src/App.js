@@ -18,7 +18,11 @@ import './App.css';
 import CompareContentContainer from './components/CompareContent/CompareContentContainer';
 
 const App = (props) => {
-  const [currentSub, setCurrentSub] = useState({name: "AskReddit", description: `r/AskReddit is a subreddit for general questions. Questions can be silly, random, mundane, and serious, ranging from "How do you feel about ORANGE JUICE" to "What is the closest you've ever come to dying?" Answers are given from anyone who wishes to answer.`})
+  const [currentSub, setCurrentSub] = useState({name: "AskReddit", description: `r/AskReddit is a subreddit for general questions. Questions can be silly, random, mundane, and serious, ranging from "How do you feel about ORANGE JUICE" to "What is the closest you've ever come to dying?" Answers are given from anyone who wishes to answer.`, topics: ["day life guy night time",
+  "shrek man friend years s***",
+  "people water food music f***",
+  "person money year job time",
+  "time people friends life game"]})
   // const [error, setError] = useState(props.error);
 
   const register = (credentials) => {

@@ -6,11 +6,11 @@ import axios from 'axios';
 
 import SelectSubreddit from './SelectSubreddit';
 import DatePicker from './DatePicker';
-import { apiURL } from '../../../utils/api';
+import { apiURL } from '../../../utils/api'; 
 import { withStyles } from '@material-ui/styles';
 
 const StyledCard = styled.div`
-    background-color: ${Colors.primary.white};
+    background-color: ${Colors.primary.white}; 
     width: 90%;
     max-width: 80rem;
     display: flex;
@@ -103,7 +103,6 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
                 })
             })
             .catch(error => console.log("ERROR HERE: ", error))
-
         }
         getTrending()
     }, [ currentSub.name ])
@@ -111,7 +110,6 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
     const trendingTooltip = `A score representing ${currentSub.name}'s follower count (${trendingScore.followerCount}) over its age (${trendingScore.age} days).`;
     const postTooltip = `The number of submissions that ${currentSub.name} receives per day on average.`;
     const commentTooltip = `The number of comments that each submission on ${currentSub.name} receives on average.`;
-
     
     return (
         <>
