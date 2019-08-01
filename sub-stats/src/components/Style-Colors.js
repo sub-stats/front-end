@@ -53,6 +53,13 @@ export const Colors = {
   }
 `;
 
+export const BgDiv = styled.div`
+  background-color: rgba(255,255,255, .4);
+  border-radius: .3rem;
+  box-shadow: 0 0 10px rgba(255,255,255, .8);
+  margin: 1rem;
+`;
+
 export const randomColor = () => {
     const bgArray = [" linear-gradient(120deg, rgba(255, 202, 0, .4) 30%, rgba(36, 160, 237, .3) 20%);",
      " linear-gradient(120deg, rgba(13, 211, 187, .4) 30%, rgba(36, 160, 237, .3) 20%);",
