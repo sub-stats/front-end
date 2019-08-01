@@ -5,10 +5,10 @@ import { Typography, Divider } from '@material-ui/core'
 import { PrimaryCard, SecondaryCard, randomColor } from '../../Style-Colors'
 
 const StyledTopic = styled(SecondaryCard)`
-    background-color: ${randomColor};
-    max-width: 30%;
+    background-image: ${randomColor};
+    
     display: flex;
-    margin: .5 rem;
+    margin: .5rem;
 `;
 const BottomCard = styled.div`
     width: 60%;
@@ -51,13 +51,17 @@ function BottomInfo ({fake, currentSub, startDate, endDate}) {
             </BottomCard>
              <StyledDivColumn>
              <Typography variant="h6" color="primary">Other topics of conversation:</Typography>
+             <Typography variant="body2">"Topics" are clusters of words which comments share a strong similarity to. Themes can be inferred by human interpretation. For example, the topic "code bytes memory files problems" could be thought of as "Memory Issues."
+             <br />
+             <br />
+             (We're not going to guess at what "shrek man friend years s***" could mean.)</Typography>
              <br />
                     <div id="hmm">
-                        <StyledTopic><Typography> Topic 1</Typography></StyledTopic>
-                        <StyledTopic>Topic 222222</StyledTopic>
-                        <StyledTopic>another topic</StyledTopic>
-                        <StyledTopic>Am I another topic?</StyledTopic>
-                        <StyledTopic>potatoes</StyledTopic>
+                        {currentSub.topics.map(a => {
+                                return (
+                                    <StyledTopic key={a}>{a}</StyledTopic>
+                            )
+                        })}
                     </div>
                
             </StyledDivColumn>

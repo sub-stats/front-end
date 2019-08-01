@@ -1,5 +1,5 @@
 #headerImg {
-  background-color: rgba(0, 121, 211, 1);
+  background-color: rgb(0, 121, 211);
   background-image: url("./assets/images/headerImg.svg");
   background-size: 50rem;
   background-repeat: no-repeat;
@@ -20,6 +20,7 @@ body {
 #hmm {
 display: flex;
 flex-flow: row wrap;
+justify-content: center;
 }
 
 #iframe svg {

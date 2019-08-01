@@ -36,10 +36,6 @@ const StyledPrimaryCard = styled(PrimaryCard)`
     margin-left: 0;
 `;
 
-const StyledSecondaryCard = styled(SecondaryCard)`
-    margin-left: 0;
-`;
-
 function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, endDate, setEndDate}) {
 
     const [trendingScore, setTrendingScore] = useState({})
@@ -47,9 +43,9 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
 
     useEffect(() => {
         const getTrending = () => {
-            axios.get(`https://yuka-livingston-subreddit.herokuapp.com/trending?subreddit=${currentSub.name}`)
+            axios.get(`${apiURL}/trending?subreddit=${currentSub.name}`)
              .then(res => {
-                console.log(res.data.trendingScore)
+                // console.log(res.data.trendingScore)
                 setTrendingScore({
                     followerCount: res.data.numberOfFollowers,
                     age: Number(Math.round(parseFloat(res.data.ageOfSubInDays)+'e1')+'e-1'),
@@ -61,22 +57,22 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
                 getTrending()
             }, [ currentSub.name ])
 
-    useEffect(() => { // This currently doesn't work, will troubleshoot it in the morning.
-        const getTrending = () => {
-            fake.map(a => {
+    // useEffect(() => { // This currently doesn't work, will troubleshoot it in the morning.
+    //     const getTrending = () => {
+    //         fake.map(a => {
 
-            })
-            axios.get(`https://yuka-livingston-subreddit.herokuapp.com/trending?subreddit=${currentSub.name}`)
-             .then(res => {
-                const score = res.data.setTrendingScore;
-                setAvgScore([...avgScore, score ])
-                console.log(avgScore)
-            })
-            .catch(error => console.log("ERROR HERE: ", error))
-                }
+    //         })
+    //         axios.get(`${apiURL}/trending?subreddit=${currentSub.name}`)
+    //          .then(res => {
+    //             const score = res.data.setTrendingScore;
+    //             setAvgScore([...avgScore, score ])
+    //             console.log(avgScore)
+    //         })
+    //         .catch(error => console.log("ERROR HERE: ", error))
+    //             }
 
-                getTrending()
-            }, [ currentSub.name ])
+    //             getTrending()
+    //         }, [ currentSub.name ])
     
 
     return (
@@ -111,21 +107,13 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
                     {currentSub.description ? <Typography >{currentSub.description}</Typography> : <Typography>Select a subreddit to read details about it.</Typography>}
                 </StyledBox>
             </StyledDivColumn>
-          
-            
-            {/*<Divider />
-                <Button>Trending y/n ???</Button>
-            <Typography variant="caption" color="textSecondary">This subreddit is currently trending! It has a larger than average userbase than other subreddits the same age, and it is growing more quickly.</Typography>*/}
         </StyledDivRow>
         {currentSub.name !== "Select a subreddit" && <StyledDivRow>
             <SecondaryCard>
                 <Typography variant="button">Trending Score: {trendingScore.score}</Typography>
             </SecondaryCard>
             <Typography variant="caption">We analyzed the popularity and age of {currentSub.name} to determine the trending score. It has {trendingScore.followerCount} followers and is {trendingScore.age} days old. The average trending score is {avgScore.length > 0 ? avgScore : "2.1"}.</Typography>
-        </StyledDivRow>}
-
-        
-            
+        </StyledDivRow>}   
         </StyledCard>
         <Divider />
         <br />

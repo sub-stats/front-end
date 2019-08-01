@@ -16,7 +16,7 @@ export default function Header() {
           <Typography variant="h4" id="title-text">
               Sub Stats
           </Typography>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Reddit_logo_orange.svg" id="headerimg"></img>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Reddit_logo_orange.svg" id="headerimg" alt="reddit logo"></img>
         </Box>
       </StyledAppBar>
     </div>

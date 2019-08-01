@@ -47,12 +47,13 @@ export const Colors = {
 `;
 
 export const randomColor = () => {
-    const bgArray = [" linear-gradient(120deg, rgba(13, 211, 187, .4), rgba(36, 160, 237, .5) 90%);",
-     " linear-gradient(120deg, rgba(36, 160, 237, .4), rgba(254, 107, 139, .3) 90%);",
-      " linear-gradient(120deg, rgba(0, 121, 211, .4), rgba(255, 69, 0, .4) 90%);",
-       " linear-gradient(120deg, rgba(0, 166, 165, ,4), rgba(36, 160, 237, .5) 90%);",]
+    const bgArray = [" linear-gradient(120deg, rgba(255, 202, 0, .4) 30%, rgba(36, 160, 237, .3) 20%);",
+     " linear-gradient(120deg, rgba(13, 211, 187, .4) 30%, rgba(36, 160, 237, .3) 20%);",
+       " linear-gradient(120deg, rgba(255, 135, 23, .4) 30%, rgba(36, 160, 237, .3) 20%);"]
 
         const randomNum = Math.floor(Math.random() * bgArray.length)
         const pick = bgArray[randomNum]
         return pick;
 }
+
+console.log(randomColor())
