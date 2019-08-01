@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 import SelectSubreddit from './SelectSubreddit';
-import DatePicker from './DatePicker';
+import SubDatePicker from './SubDatePicker';
 import { apiURL } from '../../../utils/api'; 
 import { withStyles } from '@material-ui/styles';
 
@@ -131,8 +131,8 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
                     <br />
 
                     <StyledDivRow>
-                        <DatePicker label="Start Date" date={startDate} setDate={setStartDate}></DatePicker>
-                        <DatePicker label="End Date" date={endDate} setDate={setEndDate}></DatePicker>
+                        <SubDatePicker label="Start Date" date={startDate} setDate={setStartDate}></SubDatePicker>
+                        <SubDatePicker label="End Date" date={endDate} setDate={setEndDate}></SubDatePicker>
                     </StyledDivRow>
                 </StyledPrimaryCard>
             </StyledDivColumn>
