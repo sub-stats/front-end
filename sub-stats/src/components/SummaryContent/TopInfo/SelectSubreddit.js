@@ -18,7 +18,6 @@ function SelectSubreddit ({fake, currentSub, setCurrentSub}) {
             [event.target.name]: event.target.value,
             description: desc.description,
             topics: desc.topics
-            
         }));
     }
 
