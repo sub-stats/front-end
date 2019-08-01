@@ -145,13 +145,13 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
             </StyledDivColumn>
         </StyledDivRow>
         {currentSub.name !== "Select a subreddit" && <StyledDivRow>
+  
+
             <TooltipCard label="Trending Score" value={trendingScore.score} tooltip={trendingTooltip}/>
             <TooltipCard label="Submissions/Day" value={avgPostsPerDay} tooltip={postTooltip}/>
             <TooltipCard label="Comments/Submission" value={avgCommentsPerPost} tooltip={commentTooltip}/>
         </StyledDivRow>}
 
-        
-            
         </StyledCard>
         <Divider />
         <br />
