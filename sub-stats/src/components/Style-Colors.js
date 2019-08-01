@@ -69,5 +69,3 @@ export const randomColor = () => {
         const pick = bgArray[randomNum]
         return pick;
 }
-
-console.log(randomColor())

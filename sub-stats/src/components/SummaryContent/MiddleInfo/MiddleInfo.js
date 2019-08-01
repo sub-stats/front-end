@@ -6,6 +6,7 @@ import CommentActivity from './CommentActivity';
 import CommentPerPost from './CommentPerPost';
 import DayOfWeek from './DayOfWeek';
 import HourOfDay from './HourOfDay';
+import UniqueUsers from './UniqueUsers';
 
 function MiddleInfo ({currentSub, startDate, endDate}) {
 
@@ -36,6 +37,11 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
                     endDate={reformattedEndDate}
                     graphAPIURL={URL} />
                 <CommentPerPost
+                    currentSub={lowercaseCurrentSub}
+                    startDate={reformattedStartDate}
+                    endDate={reformattedEndDate}
+                    graphAPIURL={URL} />
+                <UniqueUsers
                     currentSub={lowercaseCurrentSub}
                     startDate={reformattedStartDate}
                     endDate={reformattedEndDate}
