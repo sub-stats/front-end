@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppBar, Box, Typography } from '@material-ui/core';
+import { WbSunny } from '@material-ui/icons';
 import styled from 'styled-components'
 
 const StyledAppBar = styled(AppBar)`
@@ -7,11 +8,23 @@ const StyledAppBar = styled(AppBar)`
   z-index: 2;
 `;
 
-export default function Header() {
+const ToggleIcon = styled(WbSunny)`
+  cursor: pointer;
+`;
+
+export default function Header({ darkMode, setDarkMode }) {
+
+  const handleClick = () => {
+    console.log('clicked dark mode');
+    setDarkMode(!darkMode);
+  }
 
   return (
     <div>
       <StyledAppBar color="inherit" position="static" id="headerImg">
+        <Box display="flex" position="absolute">
+          <ToggleIcon onClick={handleClick}></ToggleIcon>
+        </Box>
         <Box p={2} display="flex" justifyContent="flex-start" id="title">
           <Typography variant="h4" id="title-text">
               Better Sub Stats
