@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components'
 
 import { PrimaryCard, BgDiv } from '../../Style-Colors';
+import styled from 'styled-components';
 
 const StyledIframe = styled.iframe`
   height: 29.5rem;
@@ -13,16 +13,16 @@ const StyledIframe = styled.iframe`
 const StyledPrimaryCard = styled(PrimaryCard)`
     margin: 1rem 0;
 `;
-function PostActivity ({currentSub, startDate, endDate}) {
+function CommentActivity ({currentSub, startDate, endDate}) {
 
     return (
         
         <StyledPrimaryCard>
             <BgDiv>
-                <StyledIframe id="iframe" src={`https://sub-stats-dash.herokuapp.com/submissions-per-day?subreddit=${currentSub}&start=${startDate.join('-')}&end=${endDate.join('-')}`}></StyledIframe>
+                <StyledIframe id="iframe" src={`https://sub-stats-dash.herokuapp.com/comments-per-day?subreddit=${currentSub}&start=${startDate.join('-')}&end=${endDate.join('-')}`}></StyledIframe>
             </BgDiv>
         </StyledPrimaryCard>
     )
 }
 
-export default PostActivity;
+export default CommentActivity;

@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import PostActivity from './PostActivity';
+import React from 'react';
 import { Typography } from '@material-ui/core'
-import axios from 'axios';
-import { apiURL } from '../../../utils/api';
+
+import PostActivity from './PostActivity';
+import CommentActivity from './CommentActivity';
+import CommentPerPost from './CommentPerPost';
+import DayOfWeek from './DayOfWeek';
+import HourOfDay from './HourOfDay';
 
 function MiddleInfo ({currentSub, startDate, endDate}) {
 
@@ -22,7 +25,28 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
                 <PostActivity
                     currentSub={lowercaseCurrentSub}
                     startDate={reformattedStartDate}
-                    endDate={reformattedEndDate} />
+                    endDate={reformattedEndDate}
+                    graphAPIURL={URL} />
+                <CommentActivity
+                    currentSub={lowercaseCurrentSub}
+                    startDate={reformattedStartDate}
+                    endDate={reformattedEndDate}
+                    graphAPIURL={URL} />
+                <CommentPerPost
+                    currentSub={lowercaseCurrentSub}
+                    startDate={reformattedStartDate}
+                    endDate={reformattedEndDate}
+                    graphAPIURL={URL} />
+                <DayOfWeek
+                    currentSub={lowercaseCurrentSub}
+                    startDate={reformattedStartDate}
+                    endDate={reformattedEndDate}
+                    graphAPIURL={URL} />
+                <HourOfDay
+                    currentSub={lowercaseCurrentSub}
+                    startDate={reformattedStartDate}
+                    endDate={reformattedEndDate}
+                    graphAPIURL={URL} />
         </div>
         
     )
