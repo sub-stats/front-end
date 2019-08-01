@@ -34,7 +34,6 @@ export const Colors = {
   background-image: linear-gradient(120deg, rgba(255, 135, 23, .4) 30%, rgba(255, 176, 0, .4) 20%);
   padding: 1rem;
   border-radius: .3rem;
-  border: 0px solid ${Colors.secondary.mango};
   box-shadow: 2px 3px 3px lightgrey;
   margin: 1rem 2rem;
 `;

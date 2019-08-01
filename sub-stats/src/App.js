@@ -32,13 +32,15 @@ const App = (props) => {
   
   return (
     <MuiThemeProvider theme={theme}>
-      <div className="App">
-        <LoggedIn exact path="/login" error={props.error} isLoggingIn={props.isLoggingIn} login={login} setLoggedIn={setLoggedIn} loggedIn={loggedIn} component={Login} />
-        <LoggedIn exact path="/register" isRegistering={props.isRegistering} register={register} component={Register} />
-        <PrivateRoute path="/dashboard" component={Header} />
-        <PrivateRoute path="/dashboard" component={NavTabs} /> 
-        <PrivateRoute path="/dashboard/compare" component={CompareContentContainer} />
-        <PrivateRoute exact path="/dashboard" isLoggingIn={props.isLoggingIn} currentSub={currentSub} setCurrentSub={setCurrentSub} component={SummaryContentContainer} />
+      <div className="App">       
+          <LoggedIn exact path="/login" isLoading={props.isLoading} setLoggedIn={setLoggedIn} loggedIn={loggedIn} component={Login} />
+          <LoggedIn exact path="/register" register={register} component={Register} />
+          <PrivateRoute path="/dashboard" component={Header} />
+          <PrivateRoute path="/dashboard" component={NavTabs} />
+        <div id="wrapper">
+          <PrivateRoute path="/dashboard/compare" component={CompareContentContainer} />
+          <PrivateRoute exact path="/dashboard" isLoading={props.isLoading} currentSub={currentSub} setCurrentSub={setCurrentSub} component={SummaryContentContainer} />
+        </div>
       </div>
     </MuiThemeProvider>
   );

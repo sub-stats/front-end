@@ -16,7 +16,6 @@ const StyledCard = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin: 0 auto;
 `;
 
 const StyledDivRow = styled.div`
@@ -33,7 +32,13 @@ const StyledDivColumn = styled.div`
 const StyledBox = styled(Box)`
     max-width: 30rem;
 `
+const StyledPrimaryCard = styled(PrimaryCard)`
+    margin-left: 0;
+`;
 
+const StyledSecondaryCard = styled(SecondaryCard)`
+    margin-left: 0;
+`;
 
 function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, endDate, setEndDate}) {
 
@@ -81,7 +86,7 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
         <StyledDivRow>
             <StyledDivColumn>
 
-                <PrimaryCard>
+                <StyledPrimaryCard>
                     <StyledDivRow>
                         <Typography variant="h4" >r/</Typography>
                         <SelectSubreddit
@@ -97,7 +102,7 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
                         <DatePicker label="Start Date" date={startDate} setDate={setStartDate}></DatePicker>
                         <DatePicker label="End Date" date={endDate} setDate={setEndDate}></DatePicker>
                     </StyledDivRow>
-                </PrimaryCard>
+                </StyledPrimaryCard>
             </StyledDivColumn>
             
             <StyledDivColumn>
