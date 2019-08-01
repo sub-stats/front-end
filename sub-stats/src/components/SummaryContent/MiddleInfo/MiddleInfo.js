@@ -22,6 +22,9 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
     return (
         <div>
             <Typography variant="h5" color="secondary">When do users post on this subreddit?</Typography>
+            <br></br>
+            <br></br>
+            <Typography variant="h6" color="primary">Post activity per day</Typography>
                 <PostActivity
                     currentSub={lowercaseCurrentSub}
                     startDate={reformattedStartDate}
