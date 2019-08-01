@@ -93,9 +93,9 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
 
     useEffect(() => {
         const getTrending = () => {
-            axios.get(`https://yuka-livingston-subreddit.herokuapp.com/trending?subreddit=${currentSub.name}`)
+            axios.get(`${apiURL}/trending?subreddit=${currentSub.name}`)
              .then(res => {
-                console.log(res.data.trendingScore)
+                // console.log(res.data.trendingScore)
                 setTrendingScore({
                     followerCount: res.data.numberOfFollowers,
                     age: Number(Math.round(parseFloat(res.data.ageOfSubInDays)+'e1')+'e-1'),
@@ -103,6 +103,7 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
                 })
             })
             .catch(error => console.log("ERROR HERE: ", error))
+
         }
         getTrending()
     }, [ currentSub.name ])
@@ -110,6 +111,7 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
     const trendingTooltip = `A score representing ${currentSub.name}'s follower count (${trendingScore.followerCount}) over its age (${trendingScore.age} days).`;
     const postTooltip = `The number of submissions that ${currentSub.name} receives per day on average.`;
     const commentTooltip = `The number of comments that each submission on ${currentSub.name} receives on average.`;
+
     
     return (
         <>
@@ -143,20 +145,15 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
                     {currentSub.description ? <Typography >{currentSub.description}</Typography> : <Typography>Select a subreddit to read details about it.</Typography>}
                 </StyledBox>
             </StyledDivColumn>
-          
-            
-            {/*<Divider />
-                <Button>Trending y/n ???</Button>
-            <Typography variant="caption" color="textSecondary">This subreddit is currently trending! It has a larger than average userbase than other subreddits the same age, and it is growing more quickly.</Typography>*/}
         </StyledDivRow>
         {currentSub.name !== "Select a subreddit" && <StyledDivRow>
+  
+
             <TooltipCard label="Trending Score" value={trendingScore.score} tooltip={trendingTooltip}/>
             <TooltipCard label="Submissions/Day" value={avgPostsPerDay} tooltip={postTooltip}/>
             <TooltipCard label="Comments/Submission" value={avgCommentsPerPost} tooltip={commentTooltip}/>
         </StyledDivRow>}
 
-        
-            
         </StyledCard>
         <Divider />
         <br />

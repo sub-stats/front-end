@@ -14,9 +14,9 @@ export default function Header() {
       <StyledAppBar color="inherit" position="static" id="headerImg">
         <Box p={2} display="flex" justifyContent="flex-start" id="title">
           <Typography variant="h4" id="title-text">
-              Sub Stats
+              Better Sub Stats
           </Typography>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Reddit_logo_orange.svg" id="headerimg"></img>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Reddit_logo_orange.svg" id="headerimg" alt="reddit logo"></img>
         </Box>
       </StyledAppBar>
     </div>
