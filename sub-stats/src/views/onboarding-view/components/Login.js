@@ -115,6 +115,7 @@ export default withFormik({
     }),
     handleSubmit(credentials, formikBag) {
         formikBag.resetForm();
+        console.log(formikBag.props.login);
         formikBag.props.login(credentials);
     }
 })(Login);
