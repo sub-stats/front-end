@@ -8,11 +8,13 @@ const StyledIframe = styled.iframe`
   width: 100%;
   border: none;
   border-radius: 1rem;
+  top: -1rem;
 `;
 
 const StyledPrimaryCard = styled(PrimaryCard)`
     margin: 1rem 0;
-    height: 28rem;
+    padding: 0;
+    height: 29rem;
 `;
 function CommentPerPost ({currentSub, startDate, endDate}) {
 
