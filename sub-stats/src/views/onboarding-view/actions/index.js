@@ -25,7 +25,7 @@ export const register = (credentials) => (dispatch) => {
         })
         .catch(error => {
             console.log(error.message);
-            dispatch({ type: REGISTERING_FAILURE });
+            dispatch({ type: REGISTERING_FAILURE, payload: error.message });
         })
 }
 
@@ -41,7 +41,7 @@ export const login = (credentials) => (dispatch) => {
             dispatch({ type: LOGIN_SUCCESS, payload: response.data.token });
         })
         .catch(error => {
-            console.log(error.message);
+            console.log(error);
             dispatch({ type: LOGIN_FAILURE, payload: error.message });
         })
 }
