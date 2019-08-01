@@ -18,7 +18,7 @@ import './App.css';
 import CompareContentContainer from './components/CompareContent/CompareContentContainer';
 
 const App = (props) => {
-  const [currentSub, setCurrentSub] = useState({name: "Select a subreddit", description: ""})
+  const [currentSub, setCurrentSub] = useState({name: "AskReddit", description: `r/AskReddit is a subreddit for general questions. Questions can be silly, random, mundane, and serious, ranging from "How do you feel about ORANGE JUICE" to "What is the closest you've ever come to dying?" Answers are given from anyone who wishes to answer.`})
   // const [error, setError] = useState(props.error);
 
   const register = (credentials) => {
