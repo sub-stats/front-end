@@ -43,6 +43,7 @@ export default function NavTabs(props) {
             console.log("Logged out now, please come again!");
             localStorage.removeItem('token');
           }} label="Log Out" to="/login"></LinkTab>
+          <LinkTab label="Dark Mode" to="#"></LinkTab>
         </Tabs>
       </StyledAppBar>
     </div>
