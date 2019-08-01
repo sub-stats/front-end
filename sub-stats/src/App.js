@@ -19,7 +19,6 @@ import CompareContentContainer from './components/CompareContent/CompareContentC
 
 const App = (props) => {
   const [currentSub, setCurrentSub] = useState({name: "Select a subreddit", description: ""})
-  const [loggedIn, setLoggedIn] = useLocalStorage('token');
   // const [error, setError] = useState(props.error);
 
   const register = (credentials) => {
@@ -33,7 +32,7 @@ const App = (props) => {
   return (
     <MuiThemeProvider theme={theme}>
       <div className="App">       
-          <LoggedIn exact path="/login" isLoading={props.isLoading} login={login} setLoggedIn={setLoggedIn} loggedIn={loggedIn} component={Login} />
+          <LoggedIn exact path="/login" isLoading={props.isLoading} login={login} component={Login} />
           <LoggedIn exact path="/register" register={register} component={Register} />
           <PrivateRoute path="/dashboard" component={Header} />
           <PrivateRoute path="/dashboard" component={NavTabs} />

@@ -77,8 +77,7 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
 
                 getTrending()
             }, [ currentSub.name ])
-    
-
+                        
     return (
         <>
         <StyledCard>
