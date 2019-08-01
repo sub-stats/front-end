@@ -20,6 +20,7 @@ import CompareContentContainer from './components/CompareContent/CompareContentC
 const App = (props) => {
   const [currentSub, setCurrentSub] = useState({name: "Select a subreddit", description: ""})
   const [loggedIn, setLoggedIn] = useLocalStorage('token');
+  // const [error, setError] = useState(props.error);
 
   const register = (credentials) => {
     props.register(credentials);
