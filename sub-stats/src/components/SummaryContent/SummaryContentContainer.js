@@ -14,7 +14,7 @@ function SummaryContentContainer ({isLoggingIn, currentSub, setCurrentSub}) {
         <>
         {isLoggingIn ? <h1>Loading...</h1> :
             <Box p={2} display="flex" justifyContent="flex-start" flexDirection="column">
-            <Typography variant="h4" >Sate your curiousity about the curious</Typography>
+            <Typography variant="h4" >Curiouser and curiouser</Typography>
             <br/>
             <Typography variant="h5" color="secondary">So, reddit.</Typography>
             <br/>
