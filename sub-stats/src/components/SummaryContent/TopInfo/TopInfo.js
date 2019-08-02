@@ -166,6 +166,7 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
         </StyledDivRow>}
 
         </StyledCard>
+        <br/>
         <Divider />
         <br />
         </>

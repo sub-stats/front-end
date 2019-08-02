@@ -2,20 +2,14 @@ import React from 'react';
 import styled from 'styled-components'
 import { Typography, Divider } from '@material-ui/core'
 
-import { PrimaryCard, SecondaryCard, randomColor } from '../../Style-Colors'
+import { SecondaryCard, randomColor } from '../../Style-Colors'
 
 const StyledTopic = styled(SecondaryCard)`
     background-image: ${randomColor};
-    
     display: flex;
     margin: .5rem;
 `;
-const BottomCard = styled.div`
-    width: 60%;
-    text-align: center;
-    display: flex;
-    flex-direction: row-wrap;
-`;
+
 const StyledDivRow = styled.div`
     display: flex;
     align-items: baseline;
@@ -28,7 +22,7 @@ const StyledDivColumn = styled.div`
     align-items: center;
 `;
 
-function BottomInfo ({currentSub, startDate, endDate}) {
+function BottomInfo ({currentSub}) {
     return (
         <div>
             <br/>
