@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Tab, Tabs } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 
 function LinkTab(props) {
   return (
@@ -33,6 +32,8 @@ export default function NavTabs(props) {
           onChange={handleChange}
           aria-label="navigation tabs"
         >
+          <a href="#"><Tab label="Home"></Tab></a>
+          <a href="#"><Tab label="About Us"></Tab></a>
           <LinkTab value="/dashboard" label="Summary" to="/dashboard"></LinkTab>
           <LinkTab value="/dashboard/compare" label="Compare" to="/dashboard/compare"></LinkTab>
           <LinkTab onClick={() => {
