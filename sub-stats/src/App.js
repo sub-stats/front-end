@@ -42,7 +42,7 @@ const App = (props) => {
       <div className="App">       
           <LoggedIn exact path="/login" isLoggingIn={props.isLoggingIn} isLoading={props.isLoading} login={login} component={Login} />
           <LoggedIn exact path="/register" register={register} component={Register} />
-          <Redirect key="/" to="/login" />
+          <Redirect exact from="/" to="/login" />
           <PrivateRoute path="/dashboard" component={() => <Header darkMode={darkMode} setDarkMode={setDarkMode}/>} />
           <PrivateRoute path="/dashboard" component={NavTabs} />
         <div id="wrapper">
