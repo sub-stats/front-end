@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import useLocalStorage from './hooks/useLocalStorage';
 import { register, login } from './views/onboarding-view/actions';
+import { Redirect } from 'react-router-dom';
 
 import LoggedIn from './components/LoggedIn';
 import PrivateRoute from './components/PrivateRoute';
@@ -41,6 +42,7 @@ const App = (props) => {
       <div className="App">       
           <LoggedIn exact path="/login" isLoggingIn={props.isLoggingIn} isLoading={props.isLoading} login={login} component={Login} />
           <LoggedIn exact path="/register" register={register} component={Register} />
+          <Redirect key="/" to="/login" />
           <PrivateRoute path="/dashboard" component={() => <Header darkMode={darkMode} setDarkMode={setDarkMode}/>} />
           <PrivateRoute path="/dashboard" component={NavTabs} />
         <div id="wrapper">
