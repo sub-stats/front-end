@@ -23,6 +23,8 @@ export default function NavTabs(props) {
       setTab(value);
   }
 
+  console.log('Logging In?', props.isLoggingIn);
+
   return (
     <div>
       <AppBar position="static">
@@ -39,7 +41,7 @@ export default function NavTabs(props) {
           <LinkTab onClick={() => {
             console.log("Logged out now, please come again!");
             localStorage.removeItem('token');
-          }} label="Log Out" to="/login"></LinkTab>
+          }} value="/login" label={props.location.pathname === "/login" || props.location.pathname === "/register" ? "Log In" : "Log Out"} to="/login"></LinkTab>
         </Tabs>
       </AppBar>
     </div>
