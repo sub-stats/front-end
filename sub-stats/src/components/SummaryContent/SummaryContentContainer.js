@@ -14,7 +14,14 @@ function SummaryContentContainer ({isLoggingIn, currentSub, setCurrentSub}) {
         <>
         {isLoggingIn ? <h1>Loading...</h1> :
             <Box p={2} display="flex" justifyContent="flex-start" flexDirection="column">
-            <Typography variant="h4" >Explore stats about a subreddit</Typography>
+            <Typography variant="h4" >Sate your curiousity about the curious</Typography>
+            <br/>
+            <Typography variant="h5" color="secondary">So, reddit.</Typography>
+            <br/>
+            
+            <Typography variant="body1" > The "front page of the internet." Ever wondered about the relationship between different subs or the most active time of day for posting? We analyzed nine popular subreddits devoted to asking questions. </Typography>
+            <br/>
+            <Typography variant="h6" color="primary">To start, select the subreddit and date range you wish to see.</Typography>
                 <TopInfo 
                     fake={fake} 
                     currentSub={currentSub} 
