@@ -4,25 +4,31 @@ import * as Yup from 'yup';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
+import { PrimaryCard } from '../../../components/Style-Colors';
+
+const StyledPrimaryCard = styled(PrimaryCard)`
+    width: 325px;
+`;
 
 const Login = ({error, isLoggingIn, errors, touched}) => {
     return (
         <>
             {isLoggingIn ? 
                 <CenterDiv><Loader type="TailSpin" color="black" /></CenterDiv> :
-                <FormContainer>
-                    {/* <Logo src="./imgs/reddit-logo.png" alt="#" /> */}
-                    <HeaderText>Better Sub Stats</HeaderText>
-                    {error && <ErrorMessage>{error}</ErrorMessage>}
-                    <RedditForm>
-                        <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
-                        {errors.username && <ErrorMessage>{touched.username && errors.username}</ErrorMessage>}
-                        <RedditField type="password" placeholder="Password" name="password" autoComplete="off" />
-                        {errors.password && <ErrorMessage>{touched.password && errors.password}</ErrorMessage>}
-                        <LoginButton type="submit">LOG IN</LoginButton>
-                        <p>Don't have an account yet? <Link to="/register">Register</Link></p>
-                    </RedditForm>
-                </FormContainer>
+                <CenterDiv>
+                    <StyledPrimaryCard>
+                        {/* <Logo src="./imgs/reddit-logo.png" alt="#" /> */}
+                        {error && <ErrorMessage>{error}</ErrorMessage>}
+                        <RedditForm>
+                            <RedditField type="text" placeholder="Username" name="username" autoComplete="off" />
+                            {errors.username && <ErrorMessage>{touched.username && errors.username}</ErrorMessage>}
+                            <RedditField type="password" placeholder="Password" name="password" autoComplete="off" />
+                            {errors.password && <ErrorMessage>{touched.password && errors.password}</ErrorMessage>}
+                            <LoginButton type="submit">LOG IN</LoginButton>
+                            <p>Don't have an account yet? <Link to="/register">Register</Link></p>
+                        </RedditForm>
+                    </StyledPrimaryCard>
+                </CenterDiv>
             }
         </>
     )

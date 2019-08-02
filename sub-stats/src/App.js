@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import useLocalStorage from './hooks/useLocalStorage';
 import { register, login } from './views/onboarding-view/actions';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 
 import LoggedIn from './components/LoggedIn';
 import PrivateRoute from './components/PrivateRoute';
@@ -39,13 +39,13 @@ const App = (props) => {
   
   return (
     <MuiThemeProvider theme={darkMode ? darkTheme : theme}>
-      <div className="App">       
+      <div className="App">     
+          <Redirect exact from="/" to="/login" />
+          <Route component={Header} />
+          <Route render={(props) => <NavTabs {...props} isLoggingIn={props.isLoggingIn} />} />
+        <div id="wrapper">
           <LoggedIn exact path="/login" isLoggingIn={props.isLoggingIn} isLoading={props.isLoading} login={login} component={Login} />
           <LoggedIn exact path="/register" register={register} component={Register} />
-          <Redirect exact from="/" to="/login" />
-          <PrivateRoute path="/dashboard" component={() => <Header darkMode={darkMode} setDarkMode={setDarkMode}/>} />
-          <PrivateRoute path="/dashboard" component={NavTabs} />
-        <div id="wrapper">
           <PrivateRoute path="/dashboard/compare" component={CompareContentContainer} />
           <PrivateRoute exact path="/dashboard" isLoading={props.isLoading} currentSub={currentSub} setCurrentSub={setCurrentSub} component={SummaryContentContainer} />
         </div>

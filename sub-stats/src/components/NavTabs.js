@@ -16,7 +16,8 @@ export default function NavTabs(props) {
   const [tab, setTab] = useState("/dashboard"); 
 
   useEffect(() => {
-    setTab(props.location.pathname);
+    const path = props.location.pathname;
+    path === "/register" ? setTab("/login") : setTab(path);
   }, [props.location.pathname]);
 
   const handleChange = (event, value) => {
@@ -34,12 +35,16 @@ export default function NavTabs(props) {
         >
           <a href="https://bettersubstatshome.netlify.com/"><Tab label="Home"></Tab></a>
           <a href="https://bettersubstatshome.netlify.com/aboutus.html"><Tab label="About Us"></Tab></a>
-          <LinkTab value="/dashboard" label="Summary" to="/dashboard"></LinkTab>
-          <LinkTab value="/dashboard/compare" label="Compare" to="/dashboard/compare"></LinkTab>
+          { tab === "/login" ? <></> :
+            <>
+            <LinkTab value="/dashboard" label="Summary" to="/dashboard"></LinkTab>
+            <LinkTab value="/dashboard/compare" label="Compare" to="/dashboard/compare"></LinkTab>
+            </>
+          }
           <LinkTab onClick={() => {
             console.log("Logged out now, please come again!");
             localStorage.removeItem('token');
-          }} label="Log Out" to="/login"></LinkTab>
+          }} value="/login" label={props.location.pathname === "/login" || props.location.pathname === "/register" ? "Log In" : "Log Out"} to="/login"></LinkTab>
         </Tabs>
       </AppBar>
     </div>
