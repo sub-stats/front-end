@@ -37,28 +37,28 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
             <Typography variant="h5" color="secondary">What are the stats for {currentSub.name} over this period of time?</Typography>
             <br/>
             <Box display="flex" justifyContent="space-between" flexWrap="wrap">
-                <Box width="48%">
+                <Box width={{ xs: "98%", md: "48%"}}>
                     <PostActivity
                         currentSub={lowercaseCurrentSub}
                         startDate={reformattedStartDate}
                         endDate={reformattedEndDate}
                         graphAPIURL={URL} />
                 </Box>
-                <Box width="48%">
+                <Box width={{ xs: "98%", md: "48%"}}>
                     <CommentActivity
                         currentSub={lowercaseCurrentSub}
                         startDate={reformattedStartDate}
                         endDate={reformattedEndDate}
                         graphAPIURL={URL} />
                 </Box>
-                <Box width="48%">
+                <Box width={{ xs: "98%", md: "48%"}}>
                     <CommentPerPost
                         currentSub={lowercaseCurrentSub}
                         startDate={reformattedStartDate}
                         endDate={reformattedEndDate}
                         graphAPIURL={URL} />
                 </Box>
-                <Box width="48%">
+                <Box width={{ xs: "98%", md: "48%"}}>
                 <UniqueUsers
                     currentSub={lowercaseCurrentSub}
                     startDate={reformattedStartDate}
@@ -72,18 +72,22 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
             <br />
             <Typography variant="h5" color="secondary">What's a typical week like in {currentSub.name}?</Typography>
             <Typography variant="body1">We took a look at the typical posting times over a day and week to see when each sub was most active.</Typography>
-            <div className="day-wrapper">
-                <DayOfWeek
-                    currentSub={lowercaseCurrentSub}
-                    startDate={reformattedStartDate}
-                    endDate={reformattedEndDate}
-                    graphAPIURL={URL} />
-                <HourOfDay
-                    currentSub={lowercaseCurrentSub}
-                    startDate={reformattedStartDate}
-                    endDate={reformattedEndDate}
-                    graphAPIURL={URL} />
-            </div>    
+            <Box display="flex" justifyContent="space-between" flexWrap="wrap">
+                <Box width={{ xs: "98%", md: "48%"}}>
+                    <DayOfWeek
+                        currentSub={lowercaseCurrentSub}
+                        startDate={reformattedStartDate}
+                        endDate={reformattedEndDate}
+                        graphAPIURL={URL} />
+                </Box>
+                <Box width={{ xs: "98%", md: "48%"}}>
+                    <HourOfDay
+                        currentSub={lowercaseCurrentSub}
+                        startDate={reformattedStartDate}
+                        endDate={reformattedEndDate}
+                        graphAPIURL={URL} />
+                </Box>
+            </Box>
             <Typography>Curious reddit users tend to post around 5 to 8pm UTC, which is 10am to 1pm Lambda Time. The only exception is AskSocialScience, which tends to post the most around 7am Lambda Time. <br/><br/> AskSocialScience is also one of two subs that sees a high post count on Fridays. Most other subs are more popular on Tuesdays and Thursdays.</Typography>
         </StyledDiv>
         
