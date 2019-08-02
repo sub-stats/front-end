@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Box } from '@material-ui/core'
+import { Typography, Box, Divider } from '@material-ui/core'
 
 import PostActivity from './PostActivity';
 import CommentActivity from './CommentActivity';
@@ -35,29 +35,30 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
     return (
         <StyledDiv>
             <Typography variant="h5" color="secondary">What are the stats for {currentSub.name} over this period of time?</Typography>
+            <br/>
             <Box display="flex" justifyContent="space-between" flexWrap="wrap">
-                <Box width="45%">
+                <Box width="48%">
                     <PostActivity
                         currentSub={lowercaseCurrentSub}
                         startDate={reformattedStartDate}
                         endDate={reformattedEndDate}
                         graphAPIURL={URL} />
                 </Box>
-                <Box width="45%">
+                <Box width="48%">
                     <CommentActivity
                         currentSub={lowercaseCurrentSub}
                         startDate={reformattedStartDate}
                         endDate={reformattedEndDate}
                         graphAPIURL={URL} />
                 </Box>
-                <Box width="45%">
+                <Box width="48%">
                     <CommentPerPost
                         currentSub={lowercaseCurrentSub}
                         startDate={reformattedStartDate}
                         endDate={reformattedEndDate}
                         graphAPIURL={URL} />
                 </Box>
-                <Box width="45%">
+                <Box width="48%">
                 <UniqueUsers
                     currentSub={lowercaseCurrentSub}
                     startDate={reformattedStartDate}
@@ -66,6 +67,11 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
                 </Box>
             </Box>
             <BottomInfo currentSub={currentSub} startDate={startDate} endDate={endDate} />
+            <br />
+            <Divider />
+            <br />
+            <Typography variant="h5" color="secondary">What's a typical week like in {currentSub.name}?</Typography>
+            <Typography variant="body1">We took a look at the typical posting times over a day and </Typography>
             <div className="day-wrapper">
                 <DayOfWeek
                     currentSub={lowercaseCurrentSub}
@@ -78,6 +84,7 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
                     endDate={reformattedEndDate}
                     graphAPIURL={URL} />
             </div>    
+            <Typography>Curious reddit users tend to post around 5 to 8pm UTC, which is 10am to 1pm Lambda Time. The only exception is AskSocialScience, which tends to post the most around 7am Lambda Time. <br/><br/> AskSocialScience is also one of two subs that sees a high post count on Fridays. Most other subs are more popular on Tuesdays and Thursdays.</Typography>
         </StyledDiv>
         
     )
