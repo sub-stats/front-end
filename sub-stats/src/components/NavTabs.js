@@ -32,8 +32,8 @@ export default function NavTabs(props) {
           onChange={handleChange}
           aria-label="navigation tabs"
         >
-          <a href="#"><Tab label="Home"></Tab></a>
-          <a href="#"><Tab label="About Us"></Tab></a>
+          <a href="https://bettersubstatshome.netlify.com/"><Tab label="Home"></Tab></a>
+          <a href="https://bettersubstatshome.netlify.com/aboutus.html"><Tab label="About Us"></Tab></a>
           <LinkTab value="/dashboard" label="Summary" to="/dashboard"></LinkTab>
           <LinkTab value="/dashboard/compare" label="Compare" to="/dashboard/compare"></LinkTab>
           <LinkTab onClick={() => {
