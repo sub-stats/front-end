@@ -42,7 +42,7 @@ justify-content: center;
   flex-flow: row-reverse;
   align-items: center;
   justify-content: space-between;
-  width: 21.5rem;
+  width: 23.5rem;
   border-radius: 3rem 3rem 0 0;
   background-color: rgba(255, 255, 255, .9);
   background-image: linear-gradient(120deg, rgba(255, 135, 23, .6) 70%, rgba(255, 176, 0, .6) 20%);
@@ -52,7 +52,7 @@ justify-content: center;
   position: relative;
   z-index: 0;
   /* color: white; */
-  height: 2rem;
+  height: 4rem;
   font-family: "Arvo", sans-serif;
 }
 

@@ -18,10 +18,12 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
     const startYear = startDate.split('-')[0].split('').slice(2).join('');
     let reformattedStartDate = startDate.split('-').slice(1);
     reformattedStartDate.push(startYear);
+    console.log('Start Date: ', reformattedStartDate.join('-'));
 
     const endYear = endDate.split('-')[0].split('').slice(2).join('');
     let reformattedEndDate = endDate.split('-').slice(1);
     reformattedEndDate.push(endYear);
+    console.log('End Date: ', reformattedEndDate);
 
     const lowercaseCurrentSub = currentSub.name.toLowerCase();
 

@@ -17,7 +17,7 @@ const StyledPrimaryCard = styled(PrimaryCard)`
     height: 29rem;
 `;
 function CommentActivity ({currentSub, startDate, endDate}) {
-
+    console.log('Comment Activity: ', `https://sub-stats-dash.herokuapp.com/comments-per-day?subreddit=${currentSub}&start=${startDate.join('-')}&end=${endDate.join('-')}`);
     return (
         
         <StyledPrimaryCard>

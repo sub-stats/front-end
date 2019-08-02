@@ -5,8 +5,6 @@ import { TextField } from '@material-ui/core';
 import moment from 'moment';
 import { DatePicker } from 'antd';
 
-import 'antd/dist/antd.css';
-
 const { RangePicker } = DatePicker;
 
 export default function SubDatePicker({ label, setStartDate, setEndDate }) {
