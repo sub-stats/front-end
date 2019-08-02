@@ -36,6 +36,10 @@ export const Colors = {
   border-radius: .3rem;
   box-shadow: 2px 3px 3px lightgrey;
   margin: 1rem 2rem;
+
+  &:hover {
+    box-shadow: 0 0 10px ${Colors.secondary.orange};
+  }
 `;
 
   export const SecondaryCard = styled.div`
