@@ -40,31 +40,21 @@ function BottomInfo ({currentSub, startDate, endDate}) {
              <div>
             <br />
              <StyledDivRow>
-             
-             <BottomCard>
-                <PrimaryCard>
-                    <Typography variant="h6">Top {currentSub.name} post between {startDate} and {endDate}</Typography>
-                    <div>
-                        
-                    </div>
-                </PrimaryCard>
-            </BottomCard>
-             <StyledDivColumn>
-             <Typography variant="h6" color="primary">Other topics of conversation:</Typography>
-             <Typography variant="body2">"Topics" are clusters of words which comments share a strong similarity to. Themes can be inferred by human interpretation. For example, the topic "code bytes memory files problems" could be thought of as "Memory Issues."
-             <br />
-             <br />
-             (We're not going to guess at what "shrek man friend years s***" could mean.)</Typography>
-             <br />
-                    <div id="hmm">
-                        {currentSub.topics.map(a => {
-                                return (
-                                    <StyledTopic key={a}>{a}</StyledTopic>
-                            )
-                        })}
-                    </div>
-               
-            </StyledDivColumn>
+                <StyledDivColumn>
+                <Typography variant="body2">"Topics" are clusters of words which comments share a strong similarity to. Themes can be inferred by human interpretation. For example, the topic "code bytes memory files problems" could be thought of as "Memory Issues."
+                <br />
+                <br />
+                (We're not going to guess at what "shrek man friend years s***" could mean.)</Typography>
+                <br />
+                        <div id="hmm">
+                            {currentSub.topics.map(a => {
+                                    return (
+                                        <StyledTopic key={a}>{a}</StyledTopic>
+                                )
+                            })}
+                        </div>
+                
+                </StyledDivColumn>
             </StyledDivRow></div>
         }
             
