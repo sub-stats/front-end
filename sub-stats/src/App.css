@@ -56,11 +56,25 @@ width: 75%;
   height: 4rem;
   font-family: "Arvo", sans-serif;
 }
+@media (max-width: 500px) {
+  #title {
+    margin: 0 auto;
+    width: 21rem;
+    top: 6.04rem;
+  }
+}
 
 #headerimg {
   width: 5rem;
   margin-top: 2.75rem;
   
+}
+
+@media (max-width: 500px) {
+  #headerimg {
+    width: 2.5rem;
+    margin: .5rem 0 0 0;
+  }
 }
 
 #title-text {

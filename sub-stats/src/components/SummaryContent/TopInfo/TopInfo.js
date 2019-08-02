@@ -51,6 +51,8 @@ function TooltipCard({label, value, tooltip}) {
 
     const ClickCard = styled(SecondaryCard)`
     cursor: pointer
+    margin: 1rem 0.3rem;
+    max-width: 32.5%;
     `;
 
     return (
