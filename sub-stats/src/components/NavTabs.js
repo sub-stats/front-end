@@ -16,14 +16,13 @@ export default function NavTabs(props) {
   const [tab, setTab] = useState("/dashboard"); 
 
   useEffect(() => {
-    setTab(props.location.pathname);
+    const path = props.location.pathname;
+    path === "/register" ? setTab("/login") : setTab(path);
   }, [props.location.pathname]);
 
   const handleChange = (event, value) => {
       setTab(value);
   }
-
-  console.log('Logging In?', props.isLoggingIn);
 
   return (
     <div>
