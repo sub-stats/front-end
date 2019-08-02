@@ -13,6 +13,7 @@ import SummaryContentContainer from './components/SummaryContent/SummaryContentC
 import { MuiThemeProvider } from '@material-ui/core';
 import { theme, darkTheme } from './theme';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 import './App.css';
 import CompareContentContainer from './components/CompareContent/CompareContentContainer';
@@ -46,6 +47,7 @@ const App = (props) => {
           <PrivateRoute path="/dashboard/compare" component={CompareContentContainer} />
           <PrivateRoute exact path="/dashboard" isLoading={props.isLoading} currentSub={currentSub} setCurrentSub={setCurrentSub} component={SummaryContentContainer} />
         </div>
+        <PrivateRoute path="/dashboard" component={Footer} />
       </div>
     </MuiThemeProvider>
   );
