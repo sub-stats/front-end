@@ -9,13 +9,13 @@ const StyledIframe = styled.iframe`
   border: none;
   border-radius: 1rem;
   position: relative;
-  top: -2rem;
+  top: -1rem;
 `;
 
 const StyledPrimaryCard = styled(PrimaryCard)`
     margin: 1rem 0;
     padding: 0;
-    height: 28rem;
+    height: 29rem;
 `;
 
 function DayOfWeek ({currentSub, startDate, endDate}) {
