@@ -161,8 +161,8 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
   
 
             <TooltipCard label="Trending Score" value={trendingScore.score} tooltip={trendingTooltip}/>
-            <TooltipCard label="Submissions/Day" value={avgPostsPerDay} tooltip={postTooltip}/>
-            <TooltipCard label="Comments/Submission" value={avgCommentsPerPost} tooltip={commentTooltip}/>
+            <TooltipCard label="Posts/Day" value={avgPostsPerDay} tooltip={postTooltip}/>
+            <TooltipCard label="Comments/Post" value={avgCommentsPerPost} tooltip={commentTooltip}/>
         </StyledDivRow>}
 
         </StyledCard>
