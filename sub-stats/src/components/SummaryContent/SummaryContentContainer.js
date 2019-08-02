@@ -3,15 +3,12 @@ import { Box, Typography } from '@material-ui/core';
 
 import TopInfo from './TopInfo/TopInfo';
 import MiddleInfo from './MiddleInfo/MiddleInfo'
-import BottomInfo from './BottomInfo/BottomInfo'
 import { subArray as fake } from '../Data'
 
 
 function SummaryContentContainer ({isLoggingIn, currentSub, setCurrentSub}) {
-    const today = new Date();
-    const yesterday = new Date(new Date().setDate(today.getDate() - 1));
-    const [startDate, setStartDate] = useState(yesterday.toLocaleDateString('en-CA'));
-    const [endDate, setEndDate] = useState(today.toLocaleDateString('en-CA'));
+    const [startDate, setStartDate] = useState('2019-05-01');
+    const [endDate, setEndDate] = useState('2019-07-31');
 
     return (
         <>
@@ -28,7 +25,6 @@ function SummaryContentContainer ({isLoggingIn, currentSub, setCurrentSub}) {
                     setEndDate={setEndDate}
                     />
                 <MiddleInfo currentSub={currentSub} startDate={startDate} endDate={endDate} />
-                <BottomInfo fake={fake} currentSub={currentSub} startDate={startDate} endDate={endDate} />
             </Box>
         }
         </>

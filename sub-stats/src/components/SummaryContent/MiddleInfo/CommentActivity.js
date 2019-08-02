@@ -8,13 +8,16 @@ const StyledIframe = styled.iframe`
   width: 100%;
   border: none;
   border-radius: 1rem;
+  top: -1rem;
 `;
 
 const StyledPrimaryCard = styled(PrimaryCard)`
     margin: 1rem 0;
+    padding: 0;
+    height: 29rem;
 `;
 function CommentActivity ({currentSub, startDate, endDate}) {
-
+    console.log('Comment Activity: ', `https://sub-stats-dash.herokuapp.com/comments-per-day?subreddit=${currentSub}&start=${startDate.join('-')}&end=${endDate.join('-')}`);
     return (
         
         <StyledPrimaryCard>

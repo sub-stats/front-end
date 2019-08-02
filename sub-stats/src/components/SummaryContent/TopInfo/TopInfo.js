@@ -11,18 +11,24 @@ import { withStyles } from '@material-ui/styles';
 
 const StyledCard = styled.div`
     background-color: ${Colors.primary.white}; 
-    width: 90%;
+    width: 100%;
     max-width: 80rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
 `;
 
 const StyledDivRow = styled.div`
     display: flex;
     align-items: baseline;
+`;
 
+const StyledDivWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
 
 const StyledDivColumn = styled.div`
@@ -31,7 +37,7 @@ const StyledDivColumn = styled.div`
 `;
 
 const StyledBox = styled(Box)`
-    max-width: 30rem;
+    max-width: 40rem;
 `
 const StyledPrimaryCard = styled(PrimaryCard)`
     margin-left: 0;
@@ -115,7 +121,7 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
         <>
         <StyledCard>
 
-        <StyledDivRow>
+        <StyledDivWrapper>
             <StyledDivColumn>
 
                 <StyledPrimaryCard>
@@ -150,13 +156,13 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
                     {currentSub.description ? <Typography >{currentSub.description}</Typography> : <Typography>Select a subreddit to read details about it.</Typography>}
                 </StyledBox>
             </StyledDivColumn>
-        </StyledDivRow>
+        </StyledDivWrapper>
         {currentSub.name !== "Select a subreddit" && <StyledDivRow>
   
 
             <TooltipCard label="Trending Score" value={trendingScore.score} tooltip={trendingTooltip}/>
-            <TooltipCard label="Submissions/Day" value={avgPostsPerDay} tooltip={postTooltip}/>
-            <TooltipCard label="Comments/Submission" value={avgCommentsPerPost} tooltip={commentTooltip}/>
+            <TooltipCard label="Posts/Day" value={avgPostsPerDay} tooltip={postTooltip}/>
+            <TooltipCard label="Comments/Post" value={avgCommentsPerPost} tooltip={commentTooltip}/>
         </StyledDivRow>}
 
         </StyledCard>
