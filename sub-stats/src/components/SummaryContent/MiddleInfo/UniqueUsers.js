@@ -8,25 +8,21 @@ const StyledIframe = styled.iframe`
   width: 100%;
   border: none;
   border-radius: 1rem;
-  position: relative;
-  top: -2rem;
 `;
 
 const StyledPrimaryCard = styled(PrimaryCard)`
     margin: 1rem 0;
-    padding: 0;
-    height: 28rem;
 `;
-function CommentActivity ({currentSub, startDate, endDate}) {
+function UniqueUsers ({currentSub, startDate, endDate}) {
 
     return (
         
-        <StyledPrimaryCard className="day-item">
+        <StyledPrimaryCard>
             <BgDiv>
-                <StyledIframe id="iframe" src={`https://sub-stats-dash.herokuapp.com/hour-of-day?subreddit=${currentSub}&start=${startDate.join('-')}&end=${endDate.join('-')}`}></StyledIframe>
+                <StyledIframe id="iframe" src={`https://sub-stats-dash.herokuapp.com/unique-users-per-day?subreddit=${currentSub}&start=${startDate.join('-')}&end=${endDate.join('-')}`}></StyledIframe>
             </BgDiv>
         </StyledPrimaryCard>
     )
 }
 
-export default CommentActivity;
+export default UniqueUsers;

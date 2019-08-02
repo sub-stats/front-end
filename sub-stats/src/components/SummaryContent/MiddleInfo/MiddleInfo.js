@@ -6,6 +6,7 @@ import CommentActivity from './CommentActivity';
 import CommentPerPost from './CommentPerPost';
 import DayOfWeek from './DayOfWeek';
 import HourOfDay from './HourOfDay';
+import UniqueUsers from './UniqueUsers';
 
 const dashLoading = document.querySelector('._dash-loading');
 
@@ -25,6 +26,9 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
     return (
         <div>
             <Typography variant="h5" color="secondary">When do users post on this subreddit?</Typography>
+            <br></br>
+            <br></br>
+            <Typography variant="h6" color="primary">Post activity per day</Typography>
                 <PostActivity
                     currentSub={lowercaseCurrentSub}
                     startDate={reformattedStartDate}
@@ -40,6 +44,12 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
                     startDate={reformattedStartDate}
                     endDate={reformattedEndDate}
                     graphAPIURL={URL} />
+                <UniqueUsers
+                    currentSub={lowercaseCurrentSub}
+                    startDate={reformattedStartDate}
+                    endDate={reformattedEndDate}
+                    graphAPIURL={URL} />
+                <div className="day-wrapper">
                 <DayOfWeek
                     currentSub={lowercaseCurrentSub}
                     startDate={reformattedStartDate}
@@ -50,6 +60,7 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
                     startDate={reformattedStartDate}
                     endDate={reformattedEndDate}
                     graphAPIURL={URL} />
+                </div>    
         </div>
         
     )
