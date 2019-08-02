@@ -10,7 +10,10 @@ import UniqueUsers from './UniqueUsers';
 import styled from 'styled-components';
 import BottomInfo from '../BottomInfo/BottomInfo';
 
+const dashLoading = document.querySelector('._dash-loading');
+
 function MiddleInfo ({currentSub, startDate, endDate}) {
+    // console.log(dashLoading);
 
     const startYear = startDate.split('-')[0].split('').slice(2).join('');
     let reformattedStartDate = startDate.split('-').slice(1);
