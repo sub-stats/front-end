@@ -28,7 +28,7 @@ const StyledDivColumn = styled.div`
     align-items: center;
 `;
 
-function BottomInfo ({fake, currentSub, startDate, endDate}) {
+function BottomInfo ({currentSub, startDate, endDate}) {
     return (
         <div>
             <br/>

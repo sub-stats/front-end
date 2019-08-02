@@ -8,6 +8,7 @@ import DayOfWeek from './DayOfWeek';
 import HourOfDay from './HourOfDay';
 import UniqueUsers from './UniqueUsers';
 import styled from 'styled-components';
+import BottomInfo from '../BottomInfo/BottomInfo';
 
 function MiddleInfo ({currentSub, startDate, endDate}) {
 
@@ -59,6 +60,7 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
                     graphAPIURL={URL} />
                 </Box>
             </Box>
+            <BottomInfo currentSub={currentSub} startDate={startDate} endDate={endDate} />
             <div className="day-wrapper">
                 <DayOfWeek
                     currentSub={lowercaseCurrentSub}

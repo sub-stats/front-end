@@ -3,7 +3,6 @@ import { Box, Typography } from '@material-ui/core';
 
 import TopInfo from './TopInfo/TopInfo';
 import MiddleInfo from './MiddleInfo/MiddleInfo'
-import BottomInfo from './BottomInfo/BottomInfo'
 import { subArray as fake } from '../Data'
 
 
@@ -28,7 +27,6 @@ function SummaryContentContainer ({isLoggingIn, currentSub, setCurrentSub}) {
                     setEndDate={setEndDate}
                     />
                 <MiddleInfo currentSub={currentSub} startDate={startDate} endDate={endDate} />
-                <BottomInfo fake={fake} currentSub={currentSub} startDate={startDate} endDate={endDate} />
             </Box>
         }
         </>
