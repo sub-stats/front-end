@@ -71,7 +71,7 @@ function MiddleInfo ({currentSub, startDate, endDate}) {
             <Divider />
             <br />
             <Typography variant="h5" color="secondary">What's a typical week like in {currentSub.name}?</Typography>
-            <Typography variant="body1">We took a look at the typical posting times over a day and </Typography>
+            <Typography variant="body1">We took a look at the typical posting times over a day and week to see when each sub was most active.</Typography>
             <div className="day-wrapper">
                 <DayOfWeek
                     currentSub={lowercaseCurrentSub}
