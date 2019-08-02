@@ -8,7 +8,10 @@ import DayOfWeek from './DayOfWeek';
 import HourOfDay from './HourOfDay';
 import UniqueUsers from './UniqueUsers';
 
+const dashLoading = document.querySelector('._dash-loading');
+
 function MiddleInfo ({currentSub, startDate, endDate}) {
+    // console.log(dashLoading);
 
     const startYear = startDate.split('-')[0].split('').slice(2).join('');
     let reformattedStartDate = startDate.split('-').slice(1);

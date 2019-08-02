@@ -16,7 +16,6 @@ const StyledPrimaryCard = styled(PrimaryCard)`
 function PostActivity ({currentSub, startDate, endDate}) {
 
     return (
-        
         <StyledPrimaryCard>
             <BgDiv>
                 <StyledIframe id="iframe" src={`https://sub-stats-dash.herokuapp.com/submissions-per-day?subreddit=${currentSub}&start=${startDate.join('-')}&end=${endDate.join('-')}`}></StyledIframe>
