@@ -22,9 +22,7 @@ export default function Header({ darkMode, setDarkMode }) {
   return (
     <div>
       <StyledAppBar color="inherit" position="static" id="headerImg">
-        <Box display="flex" position="absolute">
-          <ToggleIcon onClick={handleClick}></ToggleIcon>
-        </Box>
+        
         <Box p={2} display="flex" justifyContent="flex-start" id="title">
           <Typography variant="h4" id="title-text">
               Better Sub Stats
