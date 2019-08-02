@@ -7,47 +7,27 @@ import { DatePicker } from 'antd';
 
 import 'antd/dist/antd.css';
 
-export default function SubDatePicker({ label, date, setDate }) {
+const { RangePicker } = DatePicker;
+
+export default function SubDatePicker({ label, setStartDate, setEndDate }) {
 
   const handleChange = (date, dateString) => {
-    setDate(dateString);
+    setStartDate(dateString[0]);
+    setEndDate(dateString[1]);
   }
 
   const disabledDate = (current) => {
-    return current && current < moment('2019-05-01');
+    return current && (current < new Date('2019-05-01') || current > new Date('2019-08-01'));
   }
 
   return (
     <form>
-      {/* <TextField
-        id="date"
+      <RangePicker 
         label={label}
-        type="date"
-        defaultValue={date}
-        onChange={handleChange}
-        InputLabelProps={{
-          shrink: true,
-        }}
-      /> */}
-      <DatePicker 
-        label={label}
+        defaultValue={[moment('2019-05-01'), moment('2019-07-31')]}
         disabledDate={disabledDate} 
         onChange={handleChange}
       />
-      {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <DatePicker
-          label={label}
-          clearable
-          id="date"
-          value={Date(date)}
-          minDate={Date('2019-05-01')}
-          // maxDate={Date('2019-08-01')}
-          onChange={handleChange}
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-      </MuiPickersUtilsProvider> */}
     </form>
   );
 }

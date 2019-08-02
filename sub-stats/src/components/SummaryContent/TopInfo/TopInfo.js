@@ -131,8 +131,15 @@ function TopInfo ({fake, currentSub, setCurrentSub, startDate, setStartDate, end
                     <br />
 
                     <StyledDivRow>
-                        <SubDatePicker label="Start Date" date={startDate} setDate={setStartDate}></SubDatePicker>
-                        <SubDatePicker label="End Date" date={endDate} setDate={setEndDate}></SubDatePicker>
+                        <SubDatePicker 
+                            label="Date Range"
+                            startDate={startDate} 
+                            setStartDate={setStartDate}
+                            endDate={endDate}
+                            setEndDate={setEndDate}
+                            />
+                        {/* <SubDatePicker label="Start Date" date={startDate} setDate={setStartDate}></SubDatePicker> */}
+                        {/* <SubDatePicker label="End Date" date={endDate} setDate={setEndDate}></SubDatePicker> */}
                     </StyledDivRow>
                 </StyledPrimaryCard>
             </StyledDivColumn>
