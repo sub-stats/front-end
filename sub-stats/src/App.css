@@ -14,7 +14,7 @@ body {
 }
 
 /* .dark {
-  background-color: #0e1854;
+  background-color: #17181f;
 } */
 
 #graph-body {
@@ -25,6 +25,7 @@ body {
 display: flex;
 flex-flow: row wrap;
 justify-content: center;
+width: 75%;
 }
 
 #iframe svg {
@@ -34,7 +35,7 @@ justify-content: center;
 
 #wrapper {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 1100px;
 }
 
 #title {
@@ -73,5 +74,14 @@ justify-content: center;
 }
 
 .day-item {
-  width: 45%;
+  width: 48%;
+}
+
+.MuiTab-wrapper {
+  color: white;
+}
+
+#footer {
+  height: 48px;
+  background-color: green;
 }
