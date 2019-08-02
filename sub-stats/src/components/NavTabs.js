@@ -35,8 +35,12 @@ export default function NavTabs(props) {
         >
           <a href="https://bettersubstatshome.netlify.com/"><Tab label="Home"></Tab></a>
           <a href="https://bettersubstatshome.netlify.com/aboutus.html"><Tab label="About Us"></Tab></a>
-          <LinkTab value="/dashboard" label="Summary" to="/dashboard"></LinkTab>
-          <LinkTab value="/dashboard/compare" label="Compare" to="/dashboard/compare"></LinkTab>
+          { tab === "/login" ? <></> :
+            <>
+            <LinkTab value="/dashboard" label="Summary" to="/dashboard"></LinkTab>
+            <LinkTab value="/dashboard/compare" label="Compare" to="/dashboard/compare"></LinkTab>
+            </>
+          }
           <LinkTab onClick={() => {
             console.log("Logged out now, please come again!");
             localStorage.removeItem('token');
